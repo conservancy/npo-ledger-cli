@@ -1,7 +1,18 @@
-# Using Ledger CLI for Non-Profit organization Accounting
+# Using Ledger CLI for Non-Profit Organizational Accounting
 
-Non-profit organizations, particularly 501(c)(3) charities in the USA, have
-their own specific accounting needs.
+Non-profit organizations (NPOs), particularly 501(c)(3) charities in the USA,
+have their own specific accounting needs.  These often differ from for-profit
+accounting needs.  For example, for-profit-oriented systems often make
+problematic assumptions about the workflow of accounting tasks (often because
+NPOs rely primarily on donations, rather than fee-for-service or
+widget-selling income).  Also, non-profit income is categorized differently
+than for-profit income, and the reporting requirements vary wildly from their
+for-profit equivalents.
+
+This project is designed to provide some basic templates, tutorials, workflow
+documentation and scripts to handle accounting for an NPO.  The primary
+example is a
+[direct project (aka Model A) fiscal sponsor NPO](http://en.wikipedia.org/wiki/Fiscal_sponsorship#Models_of_fiscal_sponsorship).
 
 # Copyright and License of this project
 
