@@ -14,11 +14,16 @@ documentation and scripts to handle accounting for an NPO.  The primary
 example is a
 [direct project (aka Model A) fiscal sponsor NPO](http://en.wikipedia.org/wiki/Fiscal_sponsorship#Models_of_fiscal_sponsorship).
 
+The tutorials herein
+
 # Copyright and License of this project
 
 The intention is that the examples and templates be of maximum use to
 everyone in all possible contexts.  As such, no copyleft is applied, and the
-examples and templates will be licensed under CC-0v1.0.
+examples and templates will be licensed under CC-0v1.0.  The documentation
+itself (such as the READMEs and tutorials) are dual-licensed
+(GPLv3-or-later|CC-By-SA-3.0) for maximum use as redistributable
+documentation, or for use in GPLv3-or-later and/or AGPLv3-or-later projects.
 
 # Copyright and License of this File
 
