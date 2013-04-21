@@ -48,14 +48,66 @@ ensure that only accounts you declared explicitly will used.
 
 ### Asset Accounts
 
-Our recommendation for asset accounts FIXME.
+Asset accounts represent anything that's owned.  Typically, these are
+primarily your cash accounts, or anything that's completely liquid.
 
+Many accounting tutorial materials will note that Loans, accounts receivable
+and other receivables are assets as well.  Most accountants will
+say that they are, but with regard to accounts called "Assets", this system
+uses the account hierarchy `Assets:` only for tangible, liquid,
+cash and/or cash-equivalent assets.  You'll find that account hierarchy
+commonly in the examples herein.
+
+### Liabilities Accounts
+
+Similar to assets, most accountants will point out that any amount owed to
+someone else is a liability, and that is of course accurate.  Like with the
+`Assets:` hierarchy, this system uses `Liabilities:` hierarchy only to refer
+to formalized accounts, such as credit cards, where a monthly statement is
+sent and have an ongoing liability relationship with the organization.
+
+### Accrued Accounts
+
+For items that are receivable or payable, this system uses `Accrued:`
+hierarchy.  Under this top-level account, you'll find accounts payable,
+accounts receivable, loans payable and loans receivable.
+
+### Expense Accounts
+
+These accounts contain any expense of the organization, and all begin with
+`Expense:`.
+
+### Income Accounts
+
+These accounts contain any income of the organization, and all begin with
+`Income:`.
+
+### Unearned Income Accounts
+
+`Unearned Income:` accounts are used to refer to revenue that is currently
+received for services which have not yet been delivered.  The most typical
+and common place an NPO encounters this type of income is for conference
+registrations.  Since conference registrations arrive in advance of the
+conference, it is not proper under accrual accounting to call it income until
+such time as the conference successfully completes.
 
 ### Reporting The Chart of Accounts
 
 The
 [`general-ledger-report.plx` script in the `non-profit-audit-reports` Ledger CLI contrib directory](https://github.com/ledger/ledger/blob/next/contrib/non-profit-audit-reports/general-ledger-report.plx)
 will generate a file called `chart-of-accounts.csv`, which is the chart of accounts.
+
+The main command-line program though, that generates the chart of accounts
+looks like this:
+    $ ledger -f accounts/main/books.ledger -V -F "%-150A\n" -w -s -b 2012/01/01 -e 2013/01/01 reg
+
+Note that this is bound by date.  Typically, it makes sense to list your
+chart of accounts for a specific period (e.g., your fiscal year), since your
+accounts might have some cruft in them from previous years that should now be
+ignored.  (For example, if your organization simplified its chart of accounts
+in later years, you don't want to report those old accounts that are no
+longer used.)
+
 
 Copyright and License of This File
 ----------------------------------
