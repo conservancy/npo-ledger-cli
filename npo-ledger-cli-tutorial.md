@@ -108,6 +108,37 @@ ignored.  (For example, if your organization simplified its chart of accounts
 in later years, you don't want to report those old accounts that are no
 longer used.)
 
+Handling Fiscal Sponsorship
+---------------------------
+
+NPOs that do not provide fiscal sponsorship services will find this section
+somewhat useless.  One of the biggest benefits of Ledger CLI is its
+incredible flexibility that just does not exist in other accounting systems.
+This section describes how to exploit that flexibility to provide a
+separation in your books and reporting to handle earmarked accounts for
+fiscally sponsored projects.
+
+NPOs that don't need this feature can, in most cases, use the methods
+described herein to deploy Ledger CLI, but should leave out the `:General:`
+and `:ProjectNAME:` parts of the account hierarchy, since these are the
+primary mechanisms used herein to handle the fiscal sponsorship structure.
+
+### Earmarked Accounts
+
+Many fiscal sponsor NPOs keep earmarked accounts for their member/affiliated
+projects.  Furthermore, these projects often may either (a) terminate their
+agreement with the NPO, and thus deserve a copy of their books that they can
+"take away" with them, or (b) might be affiliated with *other* NPOs that also
+hold accounts.  This system of earmarked accounts is designed to make it easy
+for projects to have a copy of their own accounts, but not interfere with nor
+even be aware of (a) the books of other member/affiliated projects, and (b)
+the overall books of the entire NPO.
+
+On the latter point, this system utilizes a directory structure and separate
+`.ledger` files to separate out the different projects into different
+structures.  This allows member/affiliated projects to take their data and
+run `ledger` commands against it, separately and without access to the other
+`.ledger` files of the NPO.
 
 Copyright and License of This File
 ----------------------------------
