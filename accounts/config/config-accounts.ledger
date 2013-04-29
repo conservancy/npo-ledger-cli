@@ -64,3 +64,9 @@ account Expense:Main Org:Hosting
 account Expense:Main Org:Occupancy
     assert expenseChecker() or payee =~ /NEVER CHARGED/
     note Main Organization's Occupancy for Office Space and the like
+
+; Organizational Income Accounts
+
+account Income:Main Org:Donations
+    assert tag("IncomeType") =~ /^Donations$/
+    note Donation income to the Main Org.
