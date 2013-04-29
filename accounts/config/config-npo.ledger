@@ -19,6 +19,24 @@ commodity $
    format $1,000.00
    nomarket
 
+;  ################################# TAGS ################################
+
+; The Statement, Receipt, and Invoice tags' values should always a be a
+; relative path names.  Note that we "check", but do not "assert" that the
+; file name match a standard Unix-like path syntax, without spaces in the
+; file name.
+
+tag Statement
+    assert value =~ /[^\/].+/
+    check value =~ /[^\/][^ ]+(\/[^ ])+/
+
+tag Receipt
+    assert value =~ /[^\/].+/
+    check value =~ /[^\/][^ ]+(\/[^ ])+/
+
+tag Invoice
+    assert value =~ /[^\/].+/
+    check value =~ /[^\/][^ ]+(\/[^ ])+/
 
 ; ##############################  GENERAL/SHARED ACCOUNTS #######################
 
