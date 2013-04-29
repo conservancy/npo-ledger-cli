@@ -33,3 +33,9 @@ tag Invoice
     assert value =~ /[^\/].+/
     check value =~ /[^\/][^ ]+(\/[^ ])+/
 
+; IncomeType refers to the types of income a non-profit can receive.  In this
+; example, it's for the categorizations on the USA Form 990.  This could be
+; changed to accomodate other jurisdictions around the world.
+
+tag IncomeType
+    assert value =~ /^(Donations|RBI|UBTI)$/

@@ -241,6 +241,26 @@ Some examples of appropriate uses of the `Statement:` tag are:
   [receipt](#receipt-tag), but definitely is valid backup documentation for
   the transaction.
 
+#### IncomeType Tag
+
+The `IncomeType:` tag is used for all `Income:` accounts.  This refers to the
+type of income.  The value of the `IncomeType:` tag is always a string.
+Since this particular system is designed for USA non-profit entities who file
+USA Form 990, the following `IncomeType` values are supported:
+
+* `Donations`, which refers to standard charitable donations.
+
+* `RBI`, which refers to "related business income".
+
+* `UBTI`, which refers to "unrelated business taxable income.
+
+Not that donor-advised funds and government grants don't currently have their
+own `IncomeType`.  It's possible this might be necessary; the authors aren't
+familiar with how to handle those items on the Form 990.  It would be a
+relatively simple change to `config-tags.ledger`, though, to support other
+income types, or to change it entirely to handle use-cases other than USA
+Form 990 filing.
+
 ### Expense Account Documentation
 
 Each Expense account entries need to be tagged with an
