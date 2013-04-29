@@ -56,6 +56,10 @@ account Expense:Main Org:Phones
     assert expenseChecker() or payee =~ /NEVER CHARGED/
     note Main Organization's Phone Expenses
 
+account Expense:Main Org:Hosting
+    assert expenseChecker() or payee =~ /NEVER CHARGED/
+    note Main Organization's Network Hosting Provider services
+
 account Expense:Main Org:Occupancy
     assert expenseChecker() or payee =~ /NEVER CHARGED/
     note Main Organization's Occupancy for Office Space and the like

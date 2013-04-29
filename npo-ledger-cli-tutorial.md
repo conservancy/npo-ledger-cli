@@ -140,6 +140,64 @@ structures.  This allows member/affiliated projects to take their data and
 run `ledger` commands against it, separately and without access to the other
 `.ledger` files of the NPO.
 
+
+Proper Documentation For Accounts
+---------------------------------
+
+Ledger CLI offers a flexible structure of tagging any entry, including
+separate tags for parts of a split transaction.  This system uses those tags
+to ensure proper entry is included.
+
+### Expense Account Documentation
+
+Each Expense account entries need to be tagged with an `Invoice`, `Receipt`,
+or `Statement` tag.  The value of the tag is a relative path name of a file
+elsewhere in the same repository that documents the specific expense.  For
+example, an entry like this:
+
+     2012-02-05 Office Supply Galore - Online Order
+         Expense:Main Org:Office Supplies      $35.00
+             ;Receipt: accounts/documentation/org/receipts/2012-02-05_office-supply-galore.txt
+         Liabilities:Credit Card:Visa         -$35.00
+
+shows that a purchase was made at Office Supply Galore's online store for
+$35.00, and the file `accounts/documentation/org/receipts/2012-02-05_office-supply-galore.txt`
+contains the receipt from that purchase.
+
+#### payee with "NEVER CHARGED"
+
+The only exception to the standard tagging requirement is when the payee has
+been modified to indicate that the expense was `NEVER CHARGED`.  This is an
+historical special-case.  The solution was originally design for the
+following scenario:
+
+Suppose an expense was expected &mdash; for example, a situation where you
+gave a credit card number to charge something and the charge never came
+through &mdash; but it turns out the charge never happened.
+
+The recommended way to resolve this problem in the system is to just delete
+the entry entirely from the Ledger file, and allow the VCS to log the fact
+that the charge was expected, but the vendor never billed the credit card.
+
+The reason the `NEVER CHARGED` payee text was added was to handle the
+situation where the books included this charge, but the books were already
+closed for the financial period (e.g., the books had already been audited).
+Changing the payee was a method for documenting the expense.  You might use
+it like this:
+
+    2011/05/28 My Bad Billing Hosting - NEVER CHARGED
+        Liabilities:Credit Card:Visa            $-100.00
+        Expenses:Conservancy:Hosting             $100.00
+
+    2012/01/01 My Bad Billing Hosting - REVERSAL - NEVER CHARGED
+        Liabilities:Credit Card:Visa             $100.00
+        Expenses:Conservancy:Hosting            $-100.00
+
+However, going forward, you'd likely never enter anything the ledger
+**until** you had real proof via an Invoice, Receipt or Statement that showed
+the Expense did/should occur.  This use of `NEVER CHARGED` in the payee is
+thus deprecated.
+
 Copyright and License of This File
 ----------------------------------
 
