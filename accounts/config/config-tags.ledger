@@ -39,3 +39,11 @@ tag Invoice
 
 tag IncomeType
     assert value =~ /^(Donations|RBI|UBTI)$/
+
+; Program tag must match the general format of a ledger account as an
+; assertion, but we at least check known names of programs, so that warnings
+; are produced if a new program never seen before is encountered.
+
+tag Program
+    assert value =~ /[ A-z0-9\-]+(:[ A-z0-9\-]+)*/
+    check  value =~ /^(Main Org:(Overhead|Direct Fundraising))$/

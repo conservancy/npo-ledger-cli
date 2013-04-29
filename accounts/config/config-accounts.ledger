@@ -41,7 +41,7 @@ account Accrued:Accounts Receivable:Main Org
 ;       to the assert in ever Expense account because of the following bug:
 ;               http://bugs.ledger-cli.org/show_bug.cgi?id=953
 
-define expenseChecker() = (tag("Receipt") !~ /^\s*$/ or tag("Invoice") !~ /^\s*$/ or tag("Statement") !~ /^\s*$/)
+define expenseChecker() = (tag("Receipt") !~ /^\s*$/ or tag("Invoice") !~ /^\s*$/ or tag("Statement") !~ /^\s*$/) and tag("Program") !~ /^\s*$/
 ; or payee =~ /NEVER CHARGED/
 
 account Expense:Main Org:Office Supplies

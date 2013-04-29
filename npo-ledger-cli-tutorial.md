@@ -261,6 +261,18 @@ relatively simple change to `config-tags.ledger`, though, to support other
 income types, or to change it entirely to handle use-cases other than USA
 Form 990 filing.
 
+#### Program Tag
+
+The `Program` tag is used primarily to track program activity for `Income:`
+and `Expense:` accounts.  This allows for knowing what particular initiative
+initiated the income (e.g., a specific fundraising campaign) and/or what
+particular program activity an expense is toward (e.g., funding travel to
+some specific conference).
+
+The Program tag is always a string with the same format as a Ledger CLI
+account (primarily for use with Ledger CLI's `--pivot` and `--group-by`,
+[as described later](#testing-program-success).
+
 ### Expense Account Documentation
 
 Each Expense account entries need to be tagged with an
@@ -311,6 +323,26 @@ However, going forward, you'd likely never enter anything the ledger
 **until** you had real proof via an Invoice, Receipt or Statement that showed
 the Expense did/should occur.  This use of `NEVER CHARGED` in the payee is
 thus deprecated.
+
+Analysis of the Data
+--------------------
+
+If this methodology is followed, Ledger can be used to analyze the financial
+data for the organization.
+
+### Testing Program Success
+
+If you use the [`Program`](#program-tag) tag effectively, you can easily test
+the successes of various fundraising programs with a command like this:
+
+    $ ledger -f accounts/books.ledger --pivot Program bal '/^Income/'
+
+Meanwhile, using the  [`Program`](#program-tag) tag for Expenses can help
+track what programs are costing with commands like hese:
+
+    $ ledger -f accounts/books.ledger --group-by 'tag("Program")' reg '/^Expense/'
+
+FIXME: example output
 
 Copyright and License of This File
 ----------------------------------
