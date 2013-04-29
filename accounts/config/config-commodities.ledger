@@ -1,6 +1,8 @@
 ; -*- ledger -*-
 ; -*- coding: utf-8 -*-
 ;
+; config-commodities.ledger: The Ledger CLI commodities declarations for NPO use-case.
+;
 ; Copyright © 2013, Bradley M. Kuhn.
 ;
 ; The copyright holders wish that this document could be placed into the
@@ -12,6 +14,10 @@
 ; repository, a [copy of CC0-1.0 can be found on Creative Commons' website at
 ; http://creativecommons.org/publicdomain/zero/1.0/legalcode
 
-!include config-commodities.ledger
-!include config-tags.ledger
-!include config-accounts.ledger
+;  ############################## COMMODITIES #############################
+
+commodity $
+   note USD
+   format $1,000.00
+   nomarket
+

@@ -1,6 +1,8 @@
 ; -*- ledger -*-
 ; -*- coding: utf-8 -*-
 ;
+; config-tags.ledger: The Ledger CLI tag declarations for NPO use-case.
+
 ; Copyright © 2013, Bradley M. Kuhn.
 ;
 ; The copyright holders wish that this document could be placed into the
@@ -12,6 +14,22 @@
 ; repository, a [copy of CC0-1.0 can be found on Creative Commons' website at
 ; http://creativecommons.org/publicdomain/zero/1.0/legalcode
 
-!include config-commodities.ledger
-!include config-tags.ledger
-!include config-accounts.ledger
+; ################################# TAGS ################################
+
+; The Statement, Receipt, and Invoice tags' values should always a be a
+; relative path names.  Note that we "check", but do not "assert" that the
+; file name match a standard Unix-like path syntax, without spaces in the
+; file name.
+
+tag Statement
+    assert value =~ /[^\/].+/
+    check value =~ /[^\/][^ ]+(\/[^ ])+/
+
+tag Receipt
+    assert value =~ /[^\/].+/
+    check value =~ /[^\/][^ ]+(\/[^ ])+/
+
+tag Invoice
+    assert value =~ /[^\/].+/
+    check value =~ /[^\/][^ ]+(\/[^ ])+/
+

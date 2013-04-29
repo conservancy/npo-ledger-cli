@@ -1,0 +1,66 @@
+; -*- ledger -*-
+; -*- coding: utf-8 -*-
+;
+; config-accounts.ledger: The Ledger CLI accounts declarations for NPO use-case.
+;
+; Copyright © 2013, Bradley M. Kuhn.
+;
+; The copyright holders wish that this document could be placed into the
+; public domain.  However, should such a public domain dedication not be
+; possible, the copyright holders grant a waiver and/or license under the
+; terms of CC0-1.0, as published by Creative Commons, Inc.  A copy of CC0-1.0
+; can be found in the same repository as this README.md file under the
+; filename CC0-1.0.txt.  If this document has been separated from the
+; repository, a [copy of CC0-1.0 can be found on Creative Commons' website at
+; http://creativecommons.org/publicdomain/zero/1.0/legalcode
+
+; ##############################  GENERAL/SHARED ACCOUNTS #######################
+
+; Shared Asset Accounts
+
+account Asset:Checking
+   note Checking account for entire organization
+   assert commodity == "$"
+
+; Shared Liabilities Accounts
+
+account Liabilities:Credit Card:Visa
+    note Visa Credit Card account for entire organization
+   assert commodity == "$"
+
+
+; Organizational accrual accounts
+
+
+; Organization Expense Accounts
+
+; NOTE: the payee =~ test is *not* included herein and must be cut-and-pasted
+;       to the assert in ever Expense account because of the following bug:
+;               http://bugs.ledger-cli.org/show_bug.cgi?id=953
+
+define expenseChecker() = (tag("Receipt") !~ /^\s*$/ or tag("Invoice") !~ /^\s*$/ or tag("Statement") !~ /^\s*$/)
+; or payee =~ /NEVER CHARGED/
+
+account Expense:Main Org:Office Supplies
+    assert expenseChecker() or payee =~ /NEVER CHARGED/
+    note Main Organization's Office Supplies and Sundries
+
+account Expense:Main Org:Payroll:Salary
+    assert expenseChecker() or payee =~ /NEVER CHARGED/
+    note Main Organization's Staff Salaries
+
+account Expense:Main Org:Payroll:Benefits
+    assert expenseChecker() or payee =~ /NEVER CHARGED/
+    note Main Organization's Staff Benefits
+
+account Expense:Main Org:Phones
+    assert expenseChecker() or payee =~ /NEVER CHARGED/
+    note Main Organization's Phone Expenses
+
+account Expense:Main Org:Hosting
+    assert expenseChecker() or payee =~ /NEVER CHARGED/
+    note Main Organization's Network Hosting Provider services
+
+account Expense:Main Org:Occupancy
+    assert expenseChecker() or payee =~ /NEVER CHARGED/
+    note Main Organization's Occupancy for Office Space and the like
