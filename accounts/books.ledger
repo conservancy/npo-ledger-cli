@@ -1,0 +1,5 @@
+; -*- ledger -*-
+; -*- coding: utf-8 -*-
+
+!include config/config-npo.ledger
+!include org/main-org.ledger
