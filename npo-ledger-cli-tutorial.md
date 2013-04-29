@@ -218,10 +218,11 @@ Some examples of appropriate uses of the `Statement:` tag are:
 
 ### Expense Account Documentation
 
-Each Expense account entries need to be tagged with an `Invoice`, `Receipt`,
-or `Statement` tag.  The value of the tag is a relative path name of a file
-elsewhere in the same repository that documents the specific expense.  For
-example, an entry like this:
+Each Expense account entries need to be tagged with an
+[`Invoice`](#invoice-tag), [`Receipt`](#receipt-tag), or
+[`Statement`](#statement-tag) tag.  The value of the tag is a relative path
+name of a file elsewhere in the same repository that documents the specific
+expense.  For example, an entry like this:
 
      2012-02-05 Office Supply Galore - Online Order
          Expense:Main Org:Office Supplies      $35.00
