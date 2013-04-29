@@ -26,13 +26,16 @@ account Asset:Checking
 
 account Liabilities:Credit Card:Visa
     note Visa Credit Card account for entire organization
-   assert commodity == "$"
+    assert commodity == "$"
 
 
 ; Organizational accrual accounts
 
+account Accrued:Accounts Receivable:Main Org
+    note Accrued receivables for Main Org
+    assert commodity == "$"
 
-; Organization Expense Accounts
+; Organizational Expense Accounts
 
 ; NOTE: the payee =~ test is *not* included herein and must be cut-and-pasted
 ;       to the assert in ever Expense account because of the following bug:
