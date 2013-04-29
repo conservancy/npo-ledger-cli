@@ -195,6 +195,27 @@ Some examples of appropriate uses of the `Invoice:` tag are:
   reimburse (e.g., an expense report, requesting for reimbursement of travel
   expenses).
 
+#### Statement Tag
+
+The `Statement:` tag refers to any sort of written statement received from an
+external party (or even perhaps generated internally) that provides document,
+insight, or other information about the transaction.  The value of the
+`Statement:` tag is always a valid pathname in the repository to the document.
+
+Some examples of appropriate uses of the `Statement:` tag are:
+
+* bank statements, as received from the banking institution.
+
+* written reports of travel.
+
+* blog posts made by a contractor documenting their work.
+
+* written organizational policies about the expense.
+
+* just about anything that is clearly not an [invoice](invoice-tag) nor a
+  [receipt](receipt-tag), but definitely is valid backup documentation for
+  the transaction.
+
 ### Expense Account Documentation
 
 Each Expense account entries need to be tagged with an `Invoice`, `Receipt`,
