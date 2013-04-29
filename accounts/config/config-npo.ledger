@@ -28,6 +28,13 @@ account Asset:Checking
    note Checking account for entire organization
    assert commodity == "$"
 
+; Shared Liabilities Accounts
+
+account Liabilities:Credit Card:Visa
+    note Visa Credit Card account for entire organization
+   assert commodity == "$"
+
+
 ; Organizational accrual accounts
 
 
