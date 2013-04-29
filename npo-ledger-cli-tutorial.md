@@ -141,13 +141,38 @@ run `ledger` commands against it, separately and without access to the other
 `.ledger` files of the NPO.
 
 
-Proper Documentation For Accounts
----------------------------------
+Proper Documentation For All Transactions
+-----------------------------------------
 
 Ledger CLI offers a flexible structure of tagging any entry, including
 separate tags for parts of a split transaction.  This system uses those tags
 to ensure proper documentation is included for each financial transaction
 that occurs for the organization.
+
+Note that since Ledger CLI is a complete double-entry accounting system, each
+transaction can correspond to multiple entries in the general ledger.  The
+data entry format of Ledger CLI lists each double-entry accounting
+transaction in a text file.
+
+Documentation may in fact differ for entries within the transaction.  Ledger
+CLI's tagging structure is flexible in this regard: each portion of a
+double-entry transaction can carry the same tag or a different tag.  For
+example, in this entry:
+
+    2012-05-03 Sir Moneybags
+            ;Entity: Sir-Moneybags
+            ;Invoice: accounts/documentation/org/invoices/2012-05-30_moneybags-invoice_as-sent.txt
+        Accrued:Accounts Receivable:Conservancy  $100,000.00
+        Income:Main Org:Donations               $-100,000.00
+            ;IncomeType: Donations
+
+The portion of the transaction that credits the `Income:Main Org:Donations`
+has three tags: [`Entity`](#entity-tag), [`Invoice`](#invoice-tag) and
+[`IncomeType`](#income-type).  The `Entity` and `Invoice` tags, since they're
+listed at the top of the transaction, propagate through and apply to both
+sides.  But, the `IncomeType` tag, which has no meaning for `Accrued:`
+accounts, so it is applied only to the `Income:Main Org:Donations` part of
+the transaction.
 
 ### Tags Used In This System
 

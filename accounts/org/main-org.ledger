@@ -16,3 +16,9 @@
     Liabilities:Credit Card:Visa             $100.00
     Expense:Main Org:Hosting                $-100.00
 
+2012-05-03 Sir Moneybags
+        ;Entity: Sir-Moneybags
+        ;Invoice: accounts/documentation/org/invoices/2012-05-30_moneybags-invoice_as-sent.txt
+    Accrued:Accounts Receivable:Main Org  $100,000.00
+    Income:Main Org:Donations            $-100,000.00
+        ;IncomeType: Donations
