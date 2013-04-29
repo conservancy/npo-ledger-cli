@@ -146,7 +146,35 @@ Proper Documentation For Accounts
 
 Ledger CLI offers a flexible structure of tagging any entry, including
 separate tags for parts of a split transaction.  This system uses those tags
-to ensure proper entry is included.
+to ensure proper documentation is included for each financial transaction
+that occurs for the organization.
+
+### Tags Used In This System
+
+A list of tags can be found in the file `accounts/config/config-tags.ledger`
+in this project.
+
+#### Receipt Tag
+
+The `Receipt:` tag refers to receipt of some sort.  Typically, this is a
+document that shows clear confirmation that the transaction has already
+occurred.  The value of the `Receipt:` tag is always a valid pathname in the
+repository to the document.
+
+Some examples of appropriate uses of the `Receipt:` are:
+
+* a point-of-sale credit card receipt from a purchase, given by a cashier or
+  sent via email after the purchase has occurred.
+
+* a deposit slip given at the bank upon making an over-the-counter deposit of
+  paper checks.
+
+* a confirmation document showing an outgoing wire transfer made by a bank.
+
+* a confirmation document showing transfer of funds between two bank
+  accounts.
+
+* A pay advice document generated upon payment of an invoice.
 
 ### Expense Account Documentation
 
