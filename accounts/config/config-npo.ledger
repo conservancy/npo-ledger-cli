@@ -31,3 +31,31 @@ account Asset:Checking
 ; Organizational accrual accounts
 
 
+; Organization Expense Accounts
+
+; NOTE: the payee =~ test is *not* included herein and must be cut-and-pasted
+;       to the assert in ever Expense account because of the following bug:
+;               http://bugs.ledger-cli.org/show_bug.cgi?id=953
+
+define expenseChecker() = (tag("Receipt") !~ /^\s*$/ or tag("Invoice") !~ /^\s*$/ or tag("Statement") !~ /^\s*$/)
+; or payee =~ /NEVER CHARGED/
+
+account Expense:Main Org:Office Supplies
+    assert expenseChecker() or payee =~ /NEVER CHARGED/
+    note Main Organization's Office Supplies and Sundries
+
+account Expense:Main Org:Payroll:Salary
+    assert expenseChecker() or payee =~ /NEVER CHARGED/
+    note Main Organization's Staff Salaries
+
+account Expense:Main Org:Payroll:Benefits
+    assert expenseChecker() or payee =~ /NEVER CHARGED/
+    note Main Organization's Staff Benefits
+
+account Expense:Main Org:Phones
+    assert expenseChecker() or payee =~ /NEVER CHARGED/
+    note Main Organization's Phone Expenses
+
+account Expense:Main Org:Occupancy
+    assert expenseChecker() or payee =~ /NEVER CHARGED/
+    note Main Organization's Occupancy for Office Space and the like
