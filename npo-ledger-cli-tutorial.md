@@ -212,8 +212,8 @@ Some examples of appropriate uses of the `Statement:` tag are:
 
 * written organizational policies about the expense.
 
-* just about anything that is clearly not an [invoice](invoice-tag) nor a
-  [receipt](receipt-tag), but definitely is valid backup documentation for
+* just about anything that is clearly not an [invoice](#invoice-tag) nor a
+  [receipt](#receipt-tag), but definitely is valid backup documentation for
   the transaction.
 
 ### Expense Account Documentation
