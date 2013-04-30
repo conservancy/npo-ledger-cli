@@ -313,7 +313,16 @@ The Program tag is always a string with the same format as a Ledger CLI
 account (primarily for use with Ledger CLI's `--pivot` and `--group-by`,
 [as described later](#testing-program-success).
 
-### Expense Account Documentation
+### Account Type Documentation Requirements
+
+Each account type has different documentation requirements.  Based on the
+type of the account, it requires a different set of tags.
+
+When Ledger CLI's `--pedantic` option is used, these rules are enforced by
+ledger itself via the configurations found in `config-tags.ledger` and
+`config-accounts.ledger`.
+
+#### Expense Account Documentation
 
 Each `Expense:` account entry must be tagged with the following tags:
 
@@ -321,6 +330,8 @@ Each `Expense:` account entry must be tagged with the following tags:
   [`Statement`](#statement-tag).  (The only exception to this rule: an entry
   does not need an `Invoice:`, `Receipt`, nor a `Statement` tag if the
   [payee was never charged](#never-charged-payee).
+
+* A [`Program:`] tag.
 
 #### NEVER CHARGED Payee
 
