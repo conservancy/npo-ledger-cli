@@ -266,6 +266,21 @@ Some examples of appropriate uses of the `Statement:` tag are:
 In contrast to documentation tags, information tags can more traditionally be
 considered pure "meta-data" for a ledger entry.
 
+#### Entity Tag
+
+The `Entity:` tag is required for many types of ledger entries.  The value of
+the `Entity:` tag is a unique moniker that identifies the organization,
+company, person, or legal entity that is the external party for the
+transaction.
+
+Note that there is no database of these monikers, so typos can cause
+trouble.  However, you could implement checks in
+`accounts/config/config-tags.ledger` using a regular expression to verify no
+typos have occurred.  This would be somewhat cumbersome, since Ledger CLI
+would likely require that the monikers be encoded into a regular expression.
+Barring that, the
+[integrity of your data should be periodically checked](checking-integrity-of-tag).
+
 #### IncomeType Tag
 
 The `IncomeType:` tag is used for all `Income:` accounts.  This refers to the
@@ -360,6 +375,18 @@ track what programs are costing with commands like hese:
     $ ledger -f accounts/books.ledger --group-by 'tag("Program")' reg '/^Expense/'
 
 FIXME: example output
+
+### Checking Integrity of a Tag
+
+[As mentioned](#entity-tag), the `Entity:` tag is one example among many
+where the value is a wide range, but since Ledger CLI isn't backed by a more
+complete ERP system, it's possible during data entry for typos to make a
+serious problem.  One work around to this flaw is to periodically run a
+command like:
+
+    $ ledger -f accounts/books.ledger -F '%(tag("Entity"))\n' reg|sort|uniq|less
+
+which will show all unique `Entity:` values currently in use.
 
 Copyright and License of This File
 ----------------------------------
