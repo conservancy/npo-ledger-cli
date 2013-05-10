@@ -18,7 +18,10 @@
 
 ; Shared Asset Accounts
 
+define assetChecker(amt) = (amt > -10.00 or (tag("TaxImplication") !~ /^\s*$/ and tag("Entity") !~ /^\s*$/))
+
 account Asset:Checking
+   assert assetChecker(amount)
    note Checking account for entire organization
    assert commodity == "$"
 
