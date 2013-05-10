@@ -308,7 +308,7 @@ transaction includes a payment of $10.00 or more leaving the account.  This
 tag catalogs any tax implications that might occur on outgoing funds.
 
 The most important USA-related issue tracked by this tag are contractors who
-must have annual 1099 issued.  An [`Entity:` tag](entity-tag) should always
+must have annual 1099 and/or W2 issued.  An [`Entity:` tag](entity-tag) should always
 go along with a TaxImplication tag.
 
 The possible values for this field are:
@@ -316,6 +316,9 @@ The possible values for this field are:
 * `1099`, indicating the amount paid requires issuance of a USA Federal Form
   1099 for the `Entity` involved.
 
+* `W2`, indicating the amount paid will be part of a USA Federal Form W2
+  report for the `Entity` involved.
+  
 * `Accountant-Advises-No-1099`, indicating that the circumstances and rules
   seem to indicate a USA Federal Form 1099 should be issued for the `Entity`
   involved, but an outside accountant advised that no 1099 need be issues for
