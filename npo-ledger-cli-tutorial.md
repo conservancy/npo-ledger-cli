@@ -420,6 +420,25 @@ However, going forward, you'd likely never enter anything the ledger
 the Expense did/should occur.  This use of `NEVER CHARGED` in the payee is
 thus deprecated.
 
+#### Income Account Documentation
+
+Each `Income:` account must have the following tags:
+
+* One of: [`Invoice:`](#invoice-tag),
+  [`PurchaseOrder:`](#purchase-order-tag),
+  [`Statement:`](#statement-tag) or
+  [`Contract`](#contract-tag).  (Exceptions to this requirement are as follows:
+     + the income generated from the transaction is less than $800, or
+     + the `IncomeType` is `RBI` and the income is for a defined, public
+       program (such as conference registration)
+
+* An [`Entity:`](#entity-tag) tag, *iff.* the Income for the transaction is
+  for more than $800.
+
+* An [`IncomeType:`](#incometype-tag) tag.
+
+* A [`Program:`](#program-tag) tag.
+
 Analysis of the Data
 --------------------
 
