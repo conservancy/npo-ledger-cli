@@ -26,3 +26,19 @@
     Income:Main Org:Donations            $-100,000.00
         ;IncomeType: Donations
         ;Program: Main Org:Direct Fundraising
+
+2012-07-05 J. Developer
+        ;Entity: Developer-J
+        ;Invoice: accounts/documentation/org/expenses/developer/2012-07-05_developer-invoice.txt
+    Accrued:Accounts Payable:Main Org  $-5,000.00
+    Expense:Main Org:Development        $5,000.00
+        ;Program: Main Org:Software:Internal
+        ;Statement: accounts/documentation/org/expenses/developer/2012-07-05_developer-report.txt
+
+2012-08-03 (1) J. Developer
+        ;Entity: Developer-J
+    Accrued:Accounts Payable:Main Org  $5,000.00
+        ;Invoice: accounts/documentation/org/expenses/developer/2012-07-05_developer-invoice.txt
+    Asset:Checking                    $-5,000.00
+        ;TaxImplication: 1099
+
