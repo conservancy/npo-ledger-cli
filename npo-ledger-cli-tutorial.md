@@ -301,6 +301,59 @@ relatively simple change to `config-tags.ledger`, though, to support other
 income types, or to change it entirely to handle use-cases other than USA
 Form 990 filing.
 
+#### TaxImplication Tag
+
+The `TaxImplication:` tag is used for all `Asset:` accounts when the
+transaction includes a payment of $10.00 or more leaving the account.  This
+tag catalogs any tax implications that might occur on outgoing funds.
+
+The most important USA-related issue tracked by this tag are contractors who
+must have annual 1099 issued.  An [`Entity:` tag](entity-tag) should always
+go along with a TaxImplication tag.
+
+The possible values for this field are:
+
+* `1099`, indicating the amount paid requires issuance of a USA Federal Form
+  1099 for the `Entity` involved.
+
+* `Accountant-Advises-No-1099`, indicating that the circumstances and rules
+  seem to indicate a USA Federal Form 1099 should be issued for the `Entity`
+  involved, but an outside accountant advised that no 1099 need be issues for
+  this `Entity`.
+
+* `Bank-Transfer`, indicating that the amount is a transfer between two
+  banking accounts under the control of the NPO itself.
+
+* `Foreign-Individual-Contractor`, indicating that the NPO has established
+  that the `Entity` is a contractor residing outside the USA who is not a USA
+  citizen and does not for any reason pay taxes in the USA.
+
+* `Foreign-Corporation`, indicating that the NPO has established
+  that the `Entity` is a corporation outside the USA.
+
+* `USA-Corporation`, indicating that the NPO has established that the
+  `Entity` is an incorporated entity the USA (i.e., "Inc."), and therefore no
+  1099 is required.
+
+* `USA-501c3`, , indicating that the NPO has established that the `Entity`
+  has federal 501(c)(3) status in the USA, and therefore no 1099 is required.
+
+* `Refund`, indicating that the amount is a refund owed to the `Entity` from
+  an amount previously paid to the NPO.
+
+* `Reimbursement`, indicating that the amount is a reimbursement of expenses
+  incurred by the `Entity` and thus it is not income to the `Entity`.
+
+* `Tax-Payment`, indicating this is a tax payment to a taxing authority (such
+  as the state or federal government) (e.g., a unrelated business income tax
+  payment).
+
+* `USA-LLC-No-1099`, indicating that the `Entity` is an LLC, but not the type
+  of LLC for which the USA requires issuing a 1099.
+
+* `Loan`, indicating that the `Entity` is receiving these funds as a Loan
+  that is expected to be paid back.
+
 #### Program Tag
 
 The `Program` tag is used primarily to track program activity for `Income:`

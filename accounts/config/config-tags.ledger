@@ -54,3 +54,7 @@ tag Program
 
 tag Entity
     assert value =~ /[ A-z0-9\-]+(:[ A-z0-9\-]+)*/
+
+
+tag TaxImplication
+    assert value =~ /1099|Accountant-Advises-No-1099|Bank-Transfer|Foreign-Corporation|Foreign-Individual-Contractor|Payroll|Refund|Reimbursement|Tax-Payment|USA-501c3|USA-Corporation|USA-LLC-No-1099/
