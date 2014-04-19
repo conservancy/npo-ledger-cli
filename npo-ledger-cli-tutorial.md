@@ -51,7 +51,7 @@ ensure that only accounts you declared explicitly will used.
 Asset accounts represent anything that's owned.  Typically, these are
 primarily your cash accounts, or anything that's completely liquid.
 
-Many accounting tutorial materials will note that Loans, accounts receivable
+Many accounting tutorial materials will note that loans, accounts receivable
 and other receivables are assets as well.  Most accountants will
 say that they are, but with regard to accounts called "Assets", this system
 uses the account hierarchy `Assets:` only for tangible, liquid,
@@ -338,7 +338,7 @@ The possible values for this field are:
   `Entity` is an incorporated entity the USA (i.e., "Inc."), and therefore no
   1099 is required.
 
-* `USA-501c3`, , indicating that the NPO has established that the `Entity`
+* `USA-501c3`, indicating that the NPO has established that the `Entity`
   has federal 501(c)(3) status in the USA, and therefore no 1099 is required.
 
 * `Refund`, indicating that the amount is a refund owed to the `Entity` from
@@ -354,7 +354,7 @@ The possible values for this field are:
 * `USA-LLC-No-1099`, indicating that the `Entity` is an LLC, but not the type
   of LLC for which the USA requires issuing a 1099.
 
-* `Loan`, indicating that the `Entity` is receiving these funds as a Loan
+* `Loan`, indicating that the `Entity` is receiving these funds as a loan
   that is expected to be paid back.
 
 #### Program Tag
@@ -367,7 +367,7 @@ some specific conference).
 
 The Program tag is always a string with the same format as a Ledger CLI
 account (primarily for use with Ledger CLI's `--pivot` and `--group-by`,
-[as described later](#testing-program-success).
+[as described later](#testing-program-success)).
 
 ### Account Type Documentation Requirements
 
@@ -430,7 +430,7 @@ Each `Income:` account must have the following tags:
 * One of: [`Invoice:`](#invoice-tag),
   [`PurchaseOrder:`](#purchase-order-tag),
   [`Statement:`](#statement-tag) or
-  [`Contract`](#contract-tag).  (Exceptions to this requirement are as follows:
+  [`Contract`](#contract-tag).  Exceptions to this requirement are as follows:
      + the income generated from the transaction is less than $800, or
      + the `IncomeType` is `RBI` and the income is for a defined, public
        program (such as conference registration)

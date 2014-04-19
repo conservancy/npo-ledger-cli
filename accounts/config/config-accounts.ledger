@@ -11,7 +11,7 @@
 ; terms of CC0-1.0, as published by Creative Commons, Inc.  A copy of CC0-1.0
 ; can be found in the same repository as this README.md file under the
 ; filename CC0-1.0.txt.  If this document has been separated from the
-; repository, a [copy of CC0-1.0 can be found on Creative Commons' website at
+; repository, a copy of CC0-1.0 can be found on Creative Commons' website at
 ; http://creativecommons.org/publicdomain/zero/1.0/legalcode
 
 ; ##############################  GENERAL/SHARED ACCOUNTS #######################
@@ -45,7 +45,7 @@ account Accrued:Accounts Payable:Main Org
 ; Organizational Expense Accounts
 
 ; NOTE: the payee =~ test is *not* included herein and must be cut-and-pasted
-;       to the assert in ever Expense account because of the following bug:
+;       to the assert in every Expense account because of the following bug:
 ;               http://bugs.ledger-cli.org/show_bug.cgi?id=953
 
 define expenseChecker() = (tag("Receipt") !~ /^\s*$/ or tag("Invoice") !~ /^\s*$/ or tag("Statement") !~ /^\s*$/) and tag("Program") !~ /^\s*$/
