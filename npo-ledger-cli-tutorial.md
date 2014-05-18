@@ -385,7 +385,7 @@ Each `Expense:` account entry must be tagged with the following tags:
 * One of: [`Invoice:`](#invoice-tag) [`Receipt:`](#receipt-tag), or
   [`Statement`](#statement-tag).  (The only exception to this rule: an entry
   does not need an `Invoice:`, `Receipt`, nor a `Statement` tag if the
-  [payee was never charged](#never-charged-payee).
+  [payee was never charged](#never-charged-payee).)
 
 * A [`Program:`] tag.
 
@@ -456,7 +456,7 @@ the successes of various fundraising programs with a command like this:
     $ ledger -f accounts/books.ledger --pivot Program bal '/^Income/'
 
 Meanwhile, using the  [`Program`](#program-tag) tag for Expenses can help
-track what programs are costing with commands like hese:
+track what programs are costing with commands like these:
 
     $ ledger -f accounts/books.ledger --group-by 'tag("Program")' reg '/^Expense/'
 
