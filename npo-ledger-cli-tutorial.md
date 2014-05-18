@@ -387,7 +387,7 @@ Each `Expense:` account entry must be tagged with the following tags:
   does not need an `Invoice:`, `Receipt`, nor a `Statement` tag if the
   [payee was never charged](#never-charged-payee).)
 
-* A [`Program:`] tag.
+* A [`Program:`](#program-tag) tag.
 
 #### NEVER CHARGED Payee
 
