@@ -1,0 +1,356 @@
+2013-11-18 Test
+    Expenses                     -625.00 EUR   @ $1.3262
+    Expenses                     -896.15 EUR   @ $1.3348 
+    Accrued                     $828.88
+    Accrued                   $1,196.18
+
+--debug amount.parse
+
+    0ms  [INFO]  Ledger starting
+    7ms  [DEBUG] Rational parsed = 1
+    7ms  [DEBUG] Rational parsed = 1
+    9ms  [INFO]  Parsing file "test.txt"
+   10ms  [DEBUG] Rational parsed = 625
+   11ms  [DEBUG] Rational parsed = 6631/5000
+   11ms  [DEBUG] Rational parsed = 17923/20
+   11ms  [DEBUG] Rational parsed = 3337/2500
+   12ms  [DEBUG] Rational parsed = 20722/25
+   12ms  [DEBUG] Rational parsed = 59809/50
+   15ms  [INFO]  Read journal file (6ms)
+   15ms  [INFO]  Found 1 transactions
+           $2,025.06  Accrued
+          $-2,030.43  Expenses
+--------------------
+              $-5.37
+   37ms  [INFO]  Finished executing command (17ms)
+   37ms  [INFO]  Ledger ended
+---------------------------------------------------------------------------------   
+2013-11-18 Test
+    Expenses                     -625.00 EUR   @ $1.3262
+    Expenses                     -896.15 EUR   @ $1.3348 
+    Accrued                     $828.88
+    Accrued                   $1,196.18
+
+    
+--debug amount.price
+    0ms  [INFO]  Ledger starting
+    4ms  [INFO]  Parsing file "test.txt"
+    8ms  [INFO]  Read journal file (4ms)
+    8ms  [INFO]  Found 1 transactions
+           $2,025.06  Accrued
+          $-2,030.43  Expenses
+--------------------
+              $-5.37
+   25ms  [INFO]  Finished executing command (14ms)
+   25ms  [INFO]  Ledger ended
+----------------------------------------------------------------------
+2013-11-18 Test
+    Expenses                     -625.00 EUR   @ $1.3262
+    Expenses                     -896.15 EUR   @ $1.3348 
+    Accrued                     $828.88
+    Accrued                   $1,196.18
+--debug amount.convert
+
+   0ms  [INFO]  Ledger starting
+   12ms  [INFO]  Parsing file "test.txt"
+   15ms  [DEBUG] Rational to convert = 199/50000
+   15ms  [DEBUG] num prec = 392
+   15ms  [DEBUG] den prec = 400
+   15ms  [DEBUG] mpfr_print = 0.00 (precision 2, zeros_prec -1)
+   16ms  [INFO]  Read journal file (4ms)
+   17ms  [INFO]  Found 1 transactions
+   26ms  [DEBUG] Rational to convert = -101521551/50000
+   26ms  [DEBUG] num prec = 411
+   26ms  [DEBUG] den prec = 400
+   26ms  [DEBUG] mpfr_print = -2030.43 (precision 2, zeros_prec -1)
+   28ms  [DEBUG] Rational to convert = 101253/50
+   28ms  [DEBUG] num prec = 401
+   28ms  [DEBUG] den prec = 390
+   29ms  [DEBUG] mpfr_print = 2025.06 (precision 2, zeros_prec 2)
+           $2,025.06  Accrued
+   31ms  [DEBUG] Rational to convert = -101521551/50000
+   32ms  [DEBUG] num prec = 411
+   32ms  [DEBUG] den prec = 400
+   32ms  [DEBUG] mpfr_print = -2030.43 (precision 2, zeros_prec -1)
+   32ms  [DEBUG] Rational to convert = -101521551/50000
+   32ms  [DEBUG] num prec = 411
+   32ms  [DEBUG] den prec = 400
+   32ms  [DEBUG] mpfr_print = -2030.43 (precision 2, zeros_prec 2)
+          $-2,030.43  Expenses
+--------------------
+   36ms  [DEBUG] Rational to convert = -268551/50000
+   36ms  [DEBUG] num prec = 403
+   37ms  [DEBUG] den prec = 400
+   37ms  [DEBUG] mpfr_print = -5.37 (precision 2, zeros_prec -1)
+   37ms  [DEBUG] Rational to convert = -268551/50000
+   37ms  [DEBUG] num prec = 403
+   37ms  [DEBUG] den prec = 400
+   37ms  [DEBUG] mpfr_print = -5.37 (precision 2, zeros_prec 2)
+              $-5.37
+   38ms  [INFO]  Finished executing command (18ms)
+   38ms  [INFO]  Ledger ended
+-----------------------------------------------------------
+2013-11-18 Test
+    Expenses                     -625.00 EUR   @ $1.3262
+    Expenses                     -896.15 EUR   @ $1.3348 
+    Accrued                     $828.88
+    Accrued                   $1,196.18
+
+--debug amount.commodities
+   0ms  [INFO]  Ledger starting
+   10ms  [INFO]  Parsing file "test.txt"
+   14ms  [INFO]  Read journal file (4ms)
+   14ms  [INFO]  Found 1 transactions
+           $2,025.06  Accrued
+          $-2,030.43  Expenses
+--------------------
+              $-5.37
+   31ms  [INFO]  Finished executing command (13ms)
+   31ms  [INFO]  Ledger ended
+
+-----------------------------------------------------------------------------------------
+2013-11-18 Test
+    Expenses                     -625.00 EUR   @ $1.3262
+    Expenses                     -896.15 EUR   @ $1.3348 
+    Accrued                     $828.88
+    Accrued                   $1,196.18
+
+--debug   commodity
+    0ms  [INFO]  Ledger starting
+    7ms  [INFO]  Parsing file "test.txt"
+   11ms  [DEBUG] exchange: -625.00 EUR for $-828.875
+   11ms  [DEBUG] exchange: is-per-unit   = 0
+   12ms  [DEBUG] exchange: moment        = 2013-Nov-18 00:00:00
+   12ms  [DEBUG] exchange: per-unit-cost = $1.3262
+   13ms  [DEBUG] exchanging commodity EUR at per unit cost $1.3262 on 2013-Nov-18 00:00:00
+   14ms  [DEBUG] exchange: final-cost    = $-828.875
+   15ms  [DEBUG] exchange: basis-cost    = $-828.875
+   15ms  [DEBUG] exchange: amount        = -625.00 EUR {$1.3262} [13-Nov-18]
+   16ms  [DEBUG] exchange: -896.15 EUR for $-1,196.18102
+   16ms  [DEBUG] exchange: is-per-unit   = 0
+   16ms  [DEBUG] exchange: moment        = 2013-Nov-18 00:00:00
+   16ms  [DEBUG] exchange: per-unit-cost = $1.3348
+   17ms  [DEBUG] exchanging commodity EUR at per unit cost $1.3348 on 2013-Nov-18 00:00:00
+   17ms  [DEBUG] exchange: final-cost    = $-1,196.18102
+   18ms  [DEBUG] exchange: basis-cost    = $-1,196.18102
+   18ms  [DEBUG] exchange: amount        = -896.15 EUR {$1.3348} [13-Nov-18]
+   19ms  [INFO]  Read journal file (12ms)
+   20ms  [INFO]  Found 1 transactions
+   26ms  [DEBUG] amount_t::value of $
+   26ms  [DEBUG] amount_t::value: moment = 2014-Jun-20 15:53:09.858968
+   28ms  [DEBUG] amount_t::value of EUR
+   28ms  [DEBUG] amount_t::value: moment = 2014-Jun-20 15:53:09.858968
+   28ms  [DEBUG] annotated_commodity_t::find_price(EUR)
+   28ms  [DEBUG] reference time: 2014-Jun-20 15:53:09.858968
+   28ms  [DEBUG] price annotation: $1.3262
+   29ms  [DEBUG] target commodity: $
+   29ms  [DEBUG] commodity_t::find_price(EUR)
+   29ms  [DEBUG] looking for memoized args: 14-Jun-20 15:53:09, NONE, $
+   30ms  [DEBUG] amount_t::value of EUR
+   30ms  [DEBUG] amount_t::value: moment = 2014-Jun-20 15:53:09.858968
+   30ms  [DEBUG] annotated_commodity_t::find_price(EUR)
+   31ms  [DEBUG] reference time: 2014-Jun-20 15:53:09.858968
+   31ms  [DEBUG] price annotation: $1.3348
+   31ms  [DEBUG] target commodity: $
+   31ms  [DEBUG] commodity_t::find_price(EUR)
+   31ms  [DEBUG] looking for memoized args: 14-Jun-20 15:53:09, NONE, $
+   31ms  [DEBUG] found! returning: $1.3348
+   34ms  [DEBUG] amount_t::value of $
+   34ms  [DEBUG] amount_t::value: moment = 2014-Jun-20 15:53:09.858968
+           $2,025.06  Accrued
+   36ms  [DEBUG] amount_t::value of EUR
+   37ms  [DEBUG] amount_t::value: moment = 2014-Jun-20 15:53:09.858968
+   37ms  [DEBUG] annotated_commodity_t::find_price(EUR)
+   37ms  [DEBUG] reference time: 2014-Jun-20 15:53:09.858968
+   37ms  [DEBUG] price annotation: $1.3262
+   37ms  [DEBUG] target commodity: $
+   37ms  [DEBUG] commodity_t::find_price(EUR)
+   38ms  [DEBUG] looking for memoized args: 14-Jun-20 15:53:09, NONE, $
+   38ms  [DEBUG] found! returning: $1.3348
+   39ms  [DEBUG] amount_t::value of EUR
+   39ms  [DEBUG] amount_t::value: moment = 2014-Jun-20 15:53:09.858968
+   39ms  [DEBUG] annotated_commodity_t::find_price(EUR)
+   39ms  [DEBUG] reference time: 2014-Jun-20 15:53:09.858968
+   39ms  [DEBUG] price annotation: $1.3348
+   39ms  [DEBUG] target commodity: $
+   40ms  [DEBUG] commodity_t::find_price(EUR)
+   40ms  [DEBUG] looking for memoized args: 14-Jun-20 15:53:09, NONE, $
+   40ms  [DEBUG] found! returning: $1.3348
+          $-2,030.43  Expenses
+--------------------
+   43ms  [DEBUG] amount_t::value of $
+   43ms  [DEBUG] amount_t::value: moment = 2014-Jun-20 15:53:09.858968
+   43ms  [DEBUG] amount_t::value of EUR
+   43ms  [DEBUG] amount_t::value: moment = 2014-Jun-20 15:53:09.858968
+   44ms  [DEBUG] annotated_commodity_t::find_price(EUR)
+   44ms  [DEBUG] reference time: 2014-Jun-20 15:53:09.858968
+   44ms  [DEBUG] price annotation: $1.3262
+   44ms  [DEBUG] target commodity: $
+   44ms  [DEBUG] commodity_t::find_price(EUR)
+   44ms  [DEBUG] looking for memoized args: 14-Jun-20 15:53:09, NONE, $
+   44ms  [DEBUG] found! returning: $1.3348
+   45ms  [DEBUG] amount_t::value of EUR
+   45ms  [DEBUG] amount_t::value: moment = 2014-Jun-20 15:53:09.858968
+   45ms  [DEBUG] annotated_commodity_t::find_price(EUR)
+   45ms  [DEBUG] reference time: 2014-Jun-20 15:53:09.858968
+   45ms  [DEBUG] price annotation: $1.3348
+   45ms  [DEBUG] target commodity: $
+   45ms  [DEBUG] commodity_t::find_price(EUR)
+   46ms  [DEBUG] looking for memoized args: 14-Jun-20 15:53:09, NONE, $
+   46ms  [DEBUG] found! returning: $1.3348
+              $-5.37
+   46ms  [INFO]  Finished executing command (23ms)
+   47ms  [INFO]  Ledger ended
+
+------------------------------------------------------------------------------------------------------------
+2013-11-18 Test
+    Expenses                     -625.00 EUR   @ $1.3262
+    Expenses                     -896.15 EUR   @ $1.3348 
+    Accrued                     $828.88
+    Accrued                   $1,196.18
+
+ --debug commodity.price 
+    1ms  [INFO]  Ledger starting
+    9ms  [INFO]  Parsing file "test.txt"
+   13ms  [DEBUG] exchange: -625.00 EUR for $-828.875
+   13ms  [DEBUG] exchange: is-per-unit   = 0
+   17ms  [DEBUG] exchange: moment        = 2013-Nov-18 00:00:00
+   17ms  [DEBUG] exchange: per-unit-cost = $1.3262
+   18ms  [DEBUG] exchanging commodity EUR at per unit cost $1.3262 on 2013-Nov-18 00:00:00
+   18ms  [DEBUG] exchange: final-cost    = $-828.875
+   18ms  [DEBUG] exchange: basis-cost    = $-828.875
+   19ms  [DEBUG] exchange: amount        = -625.00 EUR {$1.3262} [13-Nov-18]
+   19ms  [DEBUG] exchange: -896.15 EUR for $-1,196.18102
+   19ms  [DEBUG] exchange: is-per-unit   = 0
+   20ms  [DEBUG] exchange: moment        = 2013-Nov-18 00:00:00
+   20ms  [DEBUG] exchange: per-unit-cost = $1.3348
+   20ms  [DEBUG] exchanging commodity EUR at per unit cost $1.3348 on 2013-Nov-18 00:00:00
+   20ms  [DEBUG] exchange: final-cost    = $-1,196.18102
+   20ms  [DEBUG] exchange: basis-cost    = $-1,196.18102
+   21ms  [DEBUG] exchange: amount        = -896.15 EUR {$1.3348} [13-Nov-18]
+   22ms  [INFO]  Read journal file (14ms)
+   22ms  [INFO]  Found 1 transactions
+   27ms  [DEBUG] amount_t::value of $
+   28ms  [DEBUG] amount_t::value: moment = 2014-Jun-20 15:53:15.746010
+   29ms  [DEBUG] amount_t::value of EUR
+   29ms  [DEBUG] amount_t::value: moment = 2014-Jun-20 15:53:15.746010
+   29ms  [DEBUG] annotated_commodity_t::find_price(EUR)
+   29ms  [DEBUG] reference time: 2014-Jun-20 15:53:15.746010
+   29ms  [DEBUG] price annotation: $1.3262
+   30ms  [DEBUG] target commodity: $
+   30ms  [DEBUG] commodity_t::find_price(EUR)
+   30ms  [DEBUG] looking for memoized args: 14-Jun-20 15:53:15, NONE, $
+   31ms  [DEBUG] amount_t::value of EUR
+   31ms  [DEBUG] amount_t::value: moment = 2014-Jun-20 15:53:15.746010
+   31ms  [DEBUG] annotated_commodity_t::find_price(EUR)
+   32ms  [DEBUG] reference time: 2014-Jun-20 15:53:15.746010
+   32ms  [DEBUG] price annotation: $1.3348
+   32ms  [DEBUG] target commodity: $
+   32ms  [DEBUG] commodity_t::find_price(EUR)
+   32ms  [DEBUG] looking for memoized args: 14-Jun-20 15:53:15, NONE, $
+   32ms  [DEBUG] found! returning: $1.3348
+   35ms  [DEBUG] amount_t::value of $
+   36ms  [DEBUG] amount_t::value: moment = 2014-Jun-20 15:53:15.746010
+           $2,025.06  Accrued
+   40ms  [DEBUG] amount_t::value of EUR
+   40ms  [DEBUG] amount_t::value: moment = 2014-Jun-20 15:53:15.746010
+   40ms  [DEBUG] annotated_commodity_t::find_price(EUR)
+   41ms  [DEBUG] reference time: 2014-Jun-20 15:53:15.746010
+   41ms  [DEBUG] price annotation: $1.3262
+   41ms  [DEBUG] target commodity: $
+   41ms  [DEBUG] commodity_t::find_price(EUR)
+   41ms  [DEBUG] looking for memoized args: 14-Jun-20 15:53:15, NONE, $
+   41ms  [DEBUG] found! returning: $1.3348
+   42ms  [DEBUG] amount_t::value of EUR
+   42ms  [DEBUG] amount_t::value: moment = 2014-Jun-20 15:53:15.746010
+   42ms  [DEBUG] annotated_commodity_t::find_price(EUR)
+   42ms  [DEBUG] reference time: 2014-Jun-20 15:53:15.746010
+   42ms  [DEBUG] price annotation: $1.3348
+   42ms  [DEBUG] target commodity: $
+   42ms  [DEBUG] commodity_t::find_price(EUR)
+   43ms  [DEBUG] looking for memoized args: 14-Jun-20 15:53:15, NONE, $
+   43ms  [DEBUG] found! returning: $1.3348
+          $-2,030.43  Expenses
+--------------------
+   46ms  [DEBUG] amount_t::value of $
+   46ms  [DEBUG] amount_t::value: moment = 2014-Jun-20 15:53:15.746010
+   46ms  [DEBUG] amount_t::value of EUR
+   46ms  [DEBUG] amount_t::value: moment = 2014-Jun-20 15:53:15.746010
+   46ms  [DEBUG] annotated_commodity_t::find_price(EUR)
+   47ms  [DEBUG] reference time: 2014-Jun-20 15:53:15.746010
+   47ms  [DEBUG] price annotation: $1.3262
+   47ms  [DEBUG] target commodity: $
+   47ms  [DEBUG] commodity_t::find_price(EUR)
+   47ms  [DEBUG] looking for memoized args: 14-Jun-20 15:53:15, NONE, $
+   47ms  [DEBUG] found! returning: $1.3348
+   47ms  [DEBUG] amount_t::value of EUR
+   48ms  [DEBUG] amount_t::value: moment = 2014-Jun-20 15:53:15.746010
+   48ms  [DEBUG] annotated_commodity_t::find_price(EUR)
+   48ms  [DEBUG] reference time: 2014-Jun-20 15:53:15.746010
+   48ms  [DEBUG] price annotation: $1.3348
+   48ms  [DEBUG] target commodity: $
+   48ms  [DEBUG] commodity_t::find_price(EUR)
+   48ms  [DEBUG] looking for memoized args: 14-Jun-20 15:53:15, NONE, $
+   49ms  [DEBUG] found! returning: $1.3348
+              $-5.37
+   49ms  [INFO]  Finished executing command (24ms)
+   50ms  [INFO]  Ledger ended
+ 
+ -------------------------------------------------------------------------
+ 2013-11-18 Test
+    Expenses                     -625.00 EUR   {= $1.3262}
+    Expenses                     -896.15 EUR   {= $1.3348 }
+    Accrued                     $828.88
+    Accrued                   $1,196.18
+
+--debug   commodity 
+    0ms  [INFO]  Ledger starting
+    4ms  [INFO]  Parsing file "test.txt"
+    8ms  [DEBUG] Parsed annotation price: $1.3262
+    9ms  [DEBUG] Parsed annotation price: $1.3348
+   10ms  [DEBUG]  left symbol (EUR {=$1.3262})
+   11ms  [DEBUG] right symbol ($)
+   11ms  [DEBUG]  left symbol (EUR {=$1.3262})
+   11ms  [DEBUG] right symbol ($)
+   11ms  [DEBUG]  left symbol (EUR {=$1.3348})
+   11ms  [DEBUG] right symbol (EUR {=$1.3262})
+While parsing file "test.txt", line 5:
+While balancing transaction from "test.txt", lines 1-5:
+> 2013-11-18 Test
+>     Expenses                     -625.00 EUR   {= $1.3262}
+>     Expenses                     -896.15 EUR   {= $1.3348 }
+>     Accrued                     $828.88
+>     Accrued                   $1,196.18
+Unbalanced remainder is:
+           $2,025.06
+-625.00 EUR {=$1.3262}
+-896.15 EUR {=$1.3348}
+Amount to balance against:
+           $2,025.06
+Error: Transaction does not balance
+   14ms  [INFO]  Ledger ended
+-------------------------------------------------------------------------------
+2013-11-18 Test
+    Expenses                     -625.00 EUR   {= $1.3262}
+    Expenses                     -896.15 EUR   {= $1.3348 }
+    Accrued                     $828.88
+    Accrued                   $1,196.18
+
+--debug commodity.price 
+    0ms  [INFO]  Ledger starting
+    6ms  [INFO]  Parsing file "test.txt"
+While parsing file "test.txt", line 5:
+While balancing transaction from "test.txt", lines 1-5:
+> 2013-11-18 Test
+>     Expenses                     -625.00 EUR   {= $1.3262}
+>     Expenses                     -896.15 EUR   {= $1.3348 }
+>     Accrued                     $828.88
+>     Accrued                   $1,196.18
+Unbalanced remainder is:
+           $2,025.06
+-625.00 EUR {=$1.3262}
+-896.15 EUR {=$1.3348}
+Amount to balance against:
+           $2,025.06
+Error: Transaction does not balance
+   12ms  [INFO]  Ledger ended
