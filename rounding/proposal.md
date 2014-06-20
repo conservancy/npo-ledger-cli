@@ -37,6 +37,6 @@ If rounding up was done per transaction, then the error per transaction may add 
   A		1 BBB @$5.52
   C
   
-In the above example if there is roundiing up in each transaction then the overall result will be off by more than a dollar.
+In the above example if there is rounding up in each transaction then the overall result will be off by few cents.
 This problem does not occur in ledger as rounding is deffered till the last point that is at the time of display.
   
