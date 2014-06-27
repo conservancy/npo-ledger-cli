@@ -1,0 +1,24 @@
+    0ms  [INFO]  Ledger starting
+    2ms  [DEBUG] Rational parsed = 1
+    2ms  [DEBUG] Rational parsed = 1
+    3ms  [INFO]  Parsing file "test.txt"
+    4ms  [DEBUG] Rational parsed = 1000
+    5ms  [DEBUG] Rational parsed = 10
+    5ms  [DEBUG] Rational parsed = 20
+    7ms  [DEBUG] Rational parsed = 10123/1000
+    7ms  [DEBUG] Rational parsed = 20123/1000
+    7ms  [INFO]  Read journal file (4ms)
+    8ms  [INFO]  Found 1 transactions
+   11ms  [DEBUG] post.cc:get_amount
+   11ms  [DEBUG] post.cc:get_amount
+   11ms  [DEBUG] post.cc:get_amount
+           30.25 EUR  A
+          -30.00 EUR  C
+--------------------
+            0.25 EUR
+   25ms  [INFO]  Finished executing command (15ms)
+   26ms  [INFO]  Ledger ended
+
+   
+   
+   

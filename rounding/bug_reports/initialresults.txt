@@ -1,0 +1,100 @@
+    0ms  [INFO]  Ledger starting
+    4ms  [DEBUG] Rational parsed = 1
+    5ms  [DEBUG] amount.cc: parse
+    5ms  [DEBUG] amount.cc: parse
+    6ms  [DEBUG] Rational parsed = 1
+    6ms  [DEBUG] amount.cc: parse
+    6ms  [DEBUG] amount.cc: parse
+    9ms  [INFO]  Parsing file "test.txt"
+   10ms  [DEBUG] Rational parsed = 1000
+   10ms  [DEBUG] amount.cc: parse
+   10ms  [DEBUG] precision directive called 2
+   12ms  [DEBUG] amount.cc: parse
+   13ms  [DEBUG] Rational parsed = 10
+   13ms  [DEBUG] amount.cc: parse
+   14ms  [DEBUG] amount.cc: parse
+   14ms  [DEBUG] Rational parsed = 20
+   14ms  [DEBUG] amount.cc: parse
+   15ms  [DEBUG] amount.cc:print
+   16ms  [DEBUG] amount.cc:in place round commodity EUR value 10
+   16ms  [DEBUG] amount.cc:print
+   17ms  [DEBUG] amount.cc:in place round commodity EUR value 20
+   17ms  [DEBUG] amount.cc:+= value before 10
+   17ms  [DEBUG] amount.cc:+= value after 30
+   17ms  [DEBUG] amount.cc:print
+   17ms  [DEBUG] amount.cc: is_zero prec 0 quant string  1
+   18ms  [DEBUG] amount.cc:print
+   18ms  [DEBUG] amount.cc: is_zero prec 0 quant string  1
+   19ms  [DEBUG] Rational parsed = 10123/1000
+   19ms  [DEBUG] amount.cc: parse
+   19ms  [DEBUG] Rational parsed = 20123/1000
+   19ms  [DEBUG] amount.cc: parse
+   20ms  [INFO]  Read journal file (11ms)
+   20ms  [INFO]  Found 1 transactions
+   20ms  [DEBUG] amount.cc: parse
+   21ms  [DEBUG] amount.cc: parse
+   22ms  [DEBUG] post.cc:get_amount wrapper in lookup
+   22ms  [DEBUG] post.cc:get_amount
+   23ms  [DEBUG] post.cc:get_amount
+   23ms  [DEBUG] post.cc:get_amount
+   26ms  [DEBUG] account.cc: total 
+   27ms  [DEBUG] amount.cc:print
+   27ms  [DEBUG] amount.cc:in place round commodity EUR value 20.12
+   27ms  [DEBUG] amount.cc:print
+   27ms  [DEBUG] amount.cc:in place round commodity EUR value 10.12
+   27ms  [DEBUG] balance.cc: amount added, value before 20.120000000000001
+   27ms  [DEBUG] amount.cc:+= value before 20.120000000000001
+   28ms  [DEBUG] amount.cc:+= value after 30.240000000000002
+   28ms  [DEBUG] balance.cc: amount added, value after 30.240000000000002
+   28ms  [DEBUG] amount.cc:print
+   28ms  [DEBUG] amount.cc: is_zero prec 3 quant string  30.24
+   29ms  [DEBUG] account.cc: total 
+   29ms  [DEBUG] amount.cc:print
+   29ms  [DEBUG] amount.cc: is_zero prec 2 quant string  -30
+   29ms  [DEBUG] format.cc:real_calc formatting
+   30ms  [DEBUG] amount.cc:+= value before 20
+   31ms  [DEBUG] amount.cc:+= value after 20
+   31ms  [DEBUG] amount.cc:print
+   31ms  [DEBUG] amount.cc:in place round commodity EUR value 20.12
+   31ms  [DEBUG] amount.cc:print
+   32ms  [DEBUG] amount.cc:in place round commodity EUR value 10.12
+   32ms  [DEBUG] balance.cc: amount added, value before 20.120000000000001
+   32ms  [DEBUG] amount.cc:+= value before 20.120000000000001
+   32ms  [DEBUG] amount.cc:+= value after 30.240000000000002
+   32ms  [DEBUG] balance.cc: amount added, value after 30.240000000000002
+   32ms  [DEBUG] amount.cc:print
+   33ms  [DEBUG] amount.cc: is_zero prec 3 quant string  30.24
+   33ms  [DEBUG] amount.cc:print
+           30.24 EUR  A
+   34ms  [DEBUG] format.cc:real_calc formatting
+   35ms  [DEBUG] amount.cc:+= value before 20
+   36ms  [DEBUG] amount.cc:+= value after 20
+   36ms  [DEBUG] amount.cc:print
+   36ms  [DEBUG] amount.cc: is_zero prec 2 quant string  -30
+   37ms  [DEBUG] amount.cc:print
+   37ms  [DEBUG] amount.cc: is_zero prec 2 quant string  -30
+   37ms  [DEBUG] amount.cc:print
+          -30.00 EUR  C
+   38ms  [DEBUG] format.cc:real_calc formatting
+--------------------
+   38ms  [DEBUG] format.cc:real_calc formatting
+   39ms  [DEBUG] amount.cc:+= value before 20
+   40ms  [DEBUG] amount.cc:+= value after 20
+   40ms  [DEBUG] amount.cc:print
+   40ms  [DEBUG] amount.cc:in place round commodity EUR value 20.12
+   41ms  [DEBUG] balance.cc: amount added, value before -30
+   41ms  [DEBUG] amount.cc:+= value before -30
+   41ms  [DEBUG] amount.cc:+= value after -9.879999999999999
+   41ms  [DEBUG] balance.cc: amount added, value after -9.879999999999999
+   41ms  [DEBUG] amount.cc:print
+   41ms  [DEBUG] amount.cc:in place round commodity EUR value 10.12
+   41ms  [DEBUG] balance.cc: amount added, value before -9.879999999999999
+   41ms  [DEBUG] amount.cc:+= value before -9.879999999999999
+   41ms  [DEBUG] amount.cc:+= value after 0.24000000000000021
+   42ms  [DEBUG] balance.cc: amount added, value after 0.24000000000000021
+   42ms  [DEBUG] amount.cc:print
+   42ms  [DEBUG] amount.cc: is_zero prec 3 quant string  0.24
+   42ms  [DEBUG] amount.cc:print
+            0.24 EUR
+   43ms  [INFO]  Finished executing command (20ms)
+   43ms  [INFO]  Ledger ended
