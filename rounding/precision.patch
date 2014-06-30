@@ -1,0 +1,162 @@
+From fbc6213a8b06829f8c891acea6c3f550759634d9 Mon Sep 17 00:00:00 2001
+From: tripun <tripun@gmail.com>
+Date: Thu, 19 Jun 2014 22:08:19 +0530
+Subject: [PATCH 1/2] added sub directive precision
+
+---
+ src/textual.cc | 10 +++++++++-
+ 1 file changed, 9 insertions(+), 1 deletion(-)
+
+diff --git a/src/textual.cc b/src/textual.cc
+index 8f37a56..bbae04e 100644
+--- a/src/textual.cc
++++ b/src/textual.cc
+@@ -163,6 +163,7 @@ namespace {
+     void commodity_format_directive(commodity_t& comm, string format);
+     void commodity_nomarket_directive(commodity_t& comm);
+     void commodity_default_directive(commodity_t& comm);
++    void commodity_precision_directive(commodity_t& comm,string precise);
+ 
+     void default_commodity_directive(char * line);
+ 
+@@ -1096,6 +1097,8 @@ void instance_t::commodity_directive(char * line)
+         commodity_default_directive(*commodity);
+       else if (keyword == "note")
+         commodity->set_note(string(b));
++      else if (keyword == "precision")
++        commodity_precision_directive(*commodity,b);
+     }
+   }
+ }
+@@ -1130,7 +1133,12 @@ void instance_t::commodity_default_directive(commodity_t& comm)
+ {
+   commodity_pool_t::current_pool->default_commodity = &comm;
+ }
+-
++void instance_t::commodity_precision_directive(commodity_t& comm,string precise)
++{
++  trim(precise);
++  uint8_t _precision_level=boost::lexical_cast<uint8_t>(precise);
++  DEBUG("option.names","precision directive called ");
++}
+ void instance_t::tag_directive(char * line)
+ {
+   char * p = skip_ws(line);
+-- 
+1.8.3.2
+
+
+From 3aec85e790120661bd906a235b16abbb41fecf18 Mon Sep 17 00:00:00 2001
+From: tripun <tripun@gmail.com>
+Date: Fri, 27 Jun 2014 17:43:11 +0530
+Subject: [PATCH 2/2] added precision feature
+
+---
+ src/amount.cc   |  9 ++++++---
+ src/commodity.h | 11 ++++++++++-
+ src/textual.cc  |  5 +++--
+ 3 files changed, 19 insertions(+), 6 deletions(-)
+
+diff --git a/src/amount.cc b/src/amount.cc
+index 7bf4dfc..7581a5d 100644
+--- a/src/amount.cc
++++ b/src/amount.cc
+@@ -487,7 +487,6 @@ amount_t& amount_t::operator-=(const amount_t& amt)
+ amount_t& amount_t::multiply(const amount_t& amt, bool ignore_commodity)
+ {
+   VERIFY(amt.valid());
+-
+   if (! quantity || ! amt.quantity) {
+     if (quantity)
+       throw_(amount_error, _("Cannot multiply an amount by an uninitialized amount"));
+@@ -511,7 +510,6 @@ amount_t& amount_t::multiply(const amount_t& amt, bool ignore_commodity)
+     if (quantity->prec > comm_prec + extend_by_digits)
+       quantity->prec = static_cast<precision_t>(comm_prec + extend_by_digits);
+   }
+-
+   return *this;
+ }
+ 
+@@ -595,7 +593,6 @@ amount_t::precision_t amount_t::display_precision() const
+            _("Cannot determine display precision of an uninitialized amount"));
+ 
+   commodity_t& comm(commodity());
+-
+   if (comm && ! keep_precision())
+     return comm.precision();
+   else
+@@ -628,6 +625,12 @@ void amount_t::in_place_round()
+   else if (! keep_precision())
+     return;
+ 
++   if(this->has_commodity())
++   {
++   commodity_t &comm=this->commodity();
++   if(comm.has_flags(COMMODITY_SET_CUSTOM_PRECISION))
++        in_place_roundto(comm.custom_precision());
++   }
+   _dup();
+   set_keep_precision(false);
+ }
+diff --git a/src/commodity.h b/src/commodity.h
+index 80945fe..0e8e430 100644
+--- a/src/commodity.h
++++ b/src/commodity.h
+@@ -108,10 +108,13 @@ protected:
+ #define COMMODITY_SAW_ANN_PRICE_FLOAT    0x400
+ #define COMMODITY_SAW_ANN_PRICE_FIXATED  0x800
+ #define COMMODITY_STYLE_TIME_COLON       0x1000
++#define COMMODITY_SET_CUSTOM_PRECISION   0X2000
++
+ 
+     string                symbol;
+     optional<std::size_t> graph_index;
+     amount_t::precision_t precision;
++    int_least16_t custom_precision;
+     optional<string>      name;
+     optional<string>      note;
+     optional<amount_t>    smaller;
+@@ -132,7 +135,7 @@ protected:
+         (commodity_t::decimal_comma_by_default ?
+          static_cast<uint_least16_t>(COMMODITY_STYLE_DECIMAL_COMMA) :
+          static_cast<uint_least16_t>(COMMODITY_STYLE_DEFAULTS)),
+-        symbol(_symbol), precision(0) {
++        symbol(_symbol), precision(0),custom_precision(0) {
+       TRACE_CTOR(commodity_t::base_t, "const string&");
+     }
+     virtual ~base_t() {
+@@ -247,9 +250,15 @@ public:
+   amount_t::precision_t precision() const {
+     return base->precision;
+   }
++  int_least16_t custom_precision() const {
++    return base->custom_precision;
++  }
+   void set_precision(amount_t::precision_t arg) {
+     base->precision = arg;
+   }
++  void set_custom_precision(int_least16_t arg) {
++    base->custom_precision = arg;
++  }
+ 
+   optional<amount_t> smaller() const {
+     return base->smaller;
+diff --git a/src/textual.cc b/src/textual.cc
+index bbae04e..434b02a 100644
+--- a/src/textual.cc
++++ b/src/textual.cc
+@@ -1136,8 +1136,9 @@ void instance_t::commodity_default_directive(commodity_t& comm)
+ void instance_t::commodity_precision_directive(commodity_t& comm,string precise)
+ {
+   trim(precise);
+-  uint8_t _precision_level=boost::lexical_cast<uint8_t>(precise);
+-  DEBUG("option.names","precision directive called ");
++  int_least16_t _precision_level=boost::lexical_cast<int_least16_t>(precise);
++  comm.set_custom_precision(_precision_level);
++  comm.add_flags(COMMODITY_SET_CUSTOM_PRECISION);
+ }
+ void instance_t::tag_directive(char * line)
+ {
+-- 
+1.8.3.2
+
