@@ -1,0 +1,98 @@
+D 1000.00 EUR
+commodity EUR
+  precision 2
+  default
+  
+2012-01-01 *
+   A                        2 AAA {=10.122 EUR}
+   A                        1 BBB {=20.123 EUR}
+   C
+
+
+-V bal --debug amount.parse
+
+    0ms  [INFO]  Ledger starting
+    5ms  [DEBUG] Rational parsed = 1
+    5ms  [DEBUG] amount.cc: parse
+    5ms  [DEBUG] amount.cc: parse
+    6ms  [DEBUG] Rational parsed = 1
+    6ms  [DEBUG] amount.cc: parse
+    7ms  [DEBUG] amount.cc: parse
+   12ms  [INFO]  Parsing file "test.txt"
+   13ms  [DEBUG] Rational parsed = 1000
+   13ms  [DEBUG] amount.cc: parse
+   14ms  [DEBUG] precision directive called 2
+   15ms  [DEBUG] Rational parsed = 5061/500
+   15ms  [DEBUG] amount.cc: parse
+   16ms  [DEBUG] amount.cc: parse
+   16ms  [DEBUG] Rational parsed = 20123/1000
+   16ms  [DEBUG] amount.cc: parse
+   17ms  [DEBUG] amount.cc: parse
+   18ms  [DEBUG] amount.cc: is_zero
+   18ms  [DEBUG] amount.cc: is_zero
+   19ms  [INFO]  Read journal file (11ms)
+   19ms  [INFO]  Found 1 transactions
+   20ms  [DEBUG] amount.cc: parse
+   20ms  [DEBUG] amount.cc: parse
+   22ms  [DEBUG] post.cc:get_amount wrapper in lookup
+   22ms  [DEBUG] post.cc:get_amount
+   23ms  [DEBUG] filters.cc:calc_posts
+   23ms  [DEBUG] post.cc:get_amount
+   23ms  [DEBUG] filters.cc:calc_posts
+   23ms  [DEBUG] post.cc:get_amount
+   23ms  [DEBUG] filters.cc:calc_posts
+   23ms  [DEBUG] post.cc:get_amount
+   25ms  [DEBUG] account.cc: total 
+   27ms  [DEBUG] amount.cc:in place round commodity EUR value 20.24
+   27ms  [DEBUG] amount.cc:in place round commodity EUR value 20.12
+   27ms  [DEBUG] balance.cc: amount added, value before 20.24
+   27ms  [DEBUG] amount.cc:+= value before 20.24
+   28ms  [DEBUG] amount.cc:+= value after 40.36 2nd amt 20.12
+   28ms  [DEBUG] balance.cc: amount added, value after 40.36
+   29ms  [DEBUG] amount.cc: is_zero
+   34ms  [DEBUG] account.cc: total 
+   35ms  [DEBUG] amount.cc:in place round commodity EUR value -20.24
+   35ms  [DEBUG] amount.cc:in place round commodity EUR value -20.12
+   36ms  [DEBUG] balance.cc: amount added, value before -20.24
+   36ms  [DEBUG] amount.cc:+= value before -20.24
+   36ms  [DEBUG] amount.cc:+= value after -40.36 2nd amt -20.12
+   36ms  [DEBUG] balance.cc: amount added, value after -40.36
+   37ms  [DEBUG] amount.cc: is_zero
+   37ms  [DEBUG] format.cc:real_calc formatting
+   39ms  [DEBUG] amount.cc:+= value before 20
+   39ms  [DEBUG] amount.cc:+= value after 20 2nd amt 0
+   40ms  [DEBUG] amount.cc:in place round commodity EUR value 20.24
+   40ms  [DEBUG] amount.cc:in place round commodity EUR value 20.12
+   40ms  [DEBUG] balance.cc: amount added, value before 20.24
+   40ms  [DEBUG] amount.cc:+= value before 20.24
+   40ms  [DEBUG] amount.cc:+= value after 40.36 2nd amt 20.12
+   41ms  [DEBUG] balance.cc: amount added, value after 40.36
+   41ms  [DEBUG] amount.cc: is_zero
+           40.36 EUR  A
+   43ms  [DEBUG] format.cc:real_calc formatting
+   44ms  [DEBUG] amount.cc:+= value before 20
+   44ms  [DEBUG] amount.cc:+= value after 20 2nd amt 0
+   45ms  [DEBUG] amount.cc:in place round commodity EUR value -20.24
+   45ms  [DEBUG] amount.cc:in place round commodity EUR value -20.12
+   45ms  [DEBUG] balance.cc: amount added, value before -20.24
+   46ms  [DEBUG] amount.cc:+= value before -20.24
+   46ms  [DEBUG] amount.cc:+= value after -40.36 2nd amt -20.12
+   46ms  [DEBUG] balance.cc: amount added, value after -40.36
+   46ms  [DEBUG] amount.cc: is_zero
+          -40.36 EUR  C
+   47ms  [DEBUG] format.cc:real_calc formatting
+--------------------
+   49ms  [DEBUG] format.cc:real_calc formatting
+   50ms  [DEBUG] amount.cc:+= value before 20
+   50ms  [DEBUG] amount.cc:+= value after 20 2nd amt 0
+   51ms  [DEBUG] balance.cc: amount added, value before 2
+   51ms  [DEBUG] amount.cc:+= value before 2
+   51ms  [DEBUG] amount.cc:+= value after 0 2nd amt -2
+   51ms  [DEBUG] balance.cc: amount added, value after 0
+   51ms  [DEBUG] balance.cc: amount added, value before 1
+   51ms  [DEBUG] amount.cc:+= value before 1
+   52ms  [DEBUG] amount.cc:+= value after 0 2nd amt -1
+   52ms  [DEBUG] balance.cc: amount added, value after 0
+                   0
+   53ms  [INFO]  Finished executing command (30ms)
+   53ms  [INFO]  Ledger ended
