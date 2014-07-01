@@ -1,4 +1,7 @@
 D 1000.00 EUR
+commodity EUR
+  precision 2
+  default
 
 2012-01-01 *
    A                        1 AAA @@ 10.00 EUR
