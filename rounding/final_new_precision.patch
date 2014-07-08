@@ -1,0 +1,134 @@
+From 91dda673013ad2b32431f7011b7246b86c809727 Mon Sep 17 00:00:00 2001
+From: tripun <tripun@gmail.com>
+Date: Tue, 8 Jul 2014 21:26:30 +0530
+Subject: [PATCH] new patch
+
+---
+ src/amount.cc   |  7 +++++++
+ src/commodity.h | 11 ++++++++++-
+ src/textual.cc  | 11 ++++++++++-
+ src/value.cc    |  4 ++++
+ 4 files changed, 31 insertions(+), 2 deletions(-)
+
+diff --git a/src/amount.cc b/src/amount.cc
+index 7bf4dfc..ec4773e 100644
+--- a/src/amount.cc
++++ b/src/amount.cc
+@@ -445,6 +445,7 @@ amount_t& amount_t::operator+=(const amount_t& amt)
+ 
+   _dup();
+ 
++
+   mpq_add(MP(quantity), MP(quantity), MP(amt.quantity));
+ 
+   if (has_commodity() == amt.has_commodity())
+@@ -628,6 +629,12 @@ void amount_t::in_place_round()
+   else if (! keep_precision())
+     return;
+ 
++  if(has_commodity()) {
++  commodity_t& comm = commodity();
++  if(comm.has_flags(COMMODITY_SET_CUSTOM_PRECISION))
++      in_place_roundto(comm.custom_precision());
++  }
++
+   _dup();
+   set_keep_precision(false);
+ }
+diff --git a/src/commodity.h b/src/commodity.h
+index 80945fe..0e8e430 100644
+--- a/src/commodity.h
++++ b/src/commodity.h
+@@ -108,10 +108,13 @@ protected:
+ #define COMMODITY_SAW_ANN_PRICE_FLOAT    0x400
+ #define COMMODITY_SAW_ANN_PRICE_FIXATED  0x800
+ #define COMMODITY_STYLE_TIME_COLON       0x1000
++#define COMMODITY_SET_CUSTOM_PRECISION   0X2000
++
+ 
+     string                symbol;
+     optional<std::size_t> graph_index;
+     amount_t::precision_t precision;
++    int_least16_t custom_precision;
+     optional<string>      name;
+     optional<string>      note;
+     optional<amount_t>    smaller;
+@@ -132,7 +135,7 @@ protected:
+         (commodity_t::decimal_comma_by_default ?
+          static_cast<uint_least16_t>(COMMODITY_STYLE_DECIMAL_COMMA) :
+          static_cast<uint_least16_t>(COMMODITY_STYLE_DEFAULTS)),
+-        symbol(_symbol), precision(0) {
++        symbol(_symbol), precision(0),custom_precision(0) {
+       TRACE_CTOR(commodity_t::base_t, "const string&");
+     }
+     virtual ~base_t() {
+@@ -247,9 +250,15 @@ public:
+   amount_t::precision_t precision() const {
+     return base->precision;
+   }
++  int_least16_t custom_precision() const {
++    return base->custom_precision;
++  }
+   void set_precision(amount_t::precision_t arg) {
+     base->precision = arg;
+   }
++  void set_custom_precision(int_least16_t arg) {
++    base->custom_precision = arg;
++  }
+ 
+   optional<amount_t> smaller() const {
+     return base->smaller;
+diff --git a/src/textual.cc b/src/textual.cc
+index 8f37a56..25c6063 100644
+--- a/src/textual.cc
++++ b/src/textual.cc
+@@ -163,6 +163,7 @@ namespace {
+     void commodity_format_directive(commodity_t& comm, string format);
+     void commodity_nomarket_directive(commodity_t& comm);
+     void commodity_default_directive(commodity_t& comm);
++    void commodity_precision_directive(commodity_t& comm,string precise);
+ 
+     void default_commodity_directive(char * line);
+ 
+@@ -1096,6 +1097,8 @@ void instance_t::commodity_directive(char * line)
+         commodity_default_directive(*commodity);
+       else if (keyword == "note")
+         commodity->set_note(string(b));
++      else if (keyword == "precision")
++        commodity_precision_directive(*commodity,b);
+     }
+   }
+ }
+@@ -1130,7 +1133,13 @@ void instance_t::commodity_default_directive(commodity_t& comm)
+ {
+   commodity_pool_t::current_pool->default_commodity = &comm;
+ }
+-
++void instance_t::commodity_precision_directive(commodity_t& comm,string precise)
++{
++  trim(precise);
++  int_least16_t  _precision_level = boost::lexical_cast<int_least16_t>(precise);
++  comm.set_custom_precision(_precision_level);
++  comm.add_flags(COMMODITY_SET_CUSTOM_PRECISION);
++}
+ void instance_t::tag_directive(char * line)
+ {
+   char * p = skip_ws(line);
+diff --git a/src/value.cc b/src/value.cc
+index 70a8ab4..be96f5b 100644
+--- a/src/value.cc
++++ b/src/value.cc
+@@ -408,6 +408,10 @@ value_t& value_t::operator+=(const value_t& val)
+         in_place_cast(BALANCE);
+         return *this += val;
+       } else {
++        if(as_amount().has_commodity() && as_amount().commodity().has_flags(COMMODITY_SET_CUSTOM_PRECISION)) {
++        amount_t temp(as_amount());
++        temp.in_place_roundto(as_amount().commodity().custom_precision());
++        }
+         as_amount_lval() += val.as_amount();
+         return *this;
+       }
+-- 
+1.8.3.2
+
