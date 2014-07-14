@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="Linux-c++"
+	BuildStamp="20140714-1116-Experimental"
+	Name="experiment"
+	Generator="ctest-2.8.11.2"
+	CompilerName="/usr/bin/c++"
+	OSName="Linux"
+	Hostname="experiment"
+	OSRelease="3.11.0-12-generic"
+	OSVersion="#19-Ubuntu SMP Wed Oct 9 16:12:00 UTC 2013"
+	OSPlatform="i686"
+	Is64Bits="0"
+	VendorString="GenuineIntel"
+	VendorID="Intel Corporation"
+	FamilyID="6"
+	ModelID="42"
+	ProcessorCacheSize="6144"
+	NumberOfLogicalCPU="2"
+	NumberOfPhysicalCPU="2"
+	TotalVirtualMemory="1375"
+	TotalPhysicalMemory="1002"
+	LogicalProcessorsPerPhysical="1"
+	ProcessorClockFrequency="2166.61"
+>
+<Coverage>
+	<StartDateTime>Jul 14 16:46 IST</StartDateTime>
+	<StartTime>1405336573</StartTime>
+	<File Name="core.h" FullPath="./lib/utfcpp/source/utf8/core.h" Covered="true">
+		<LOCTested>10</LOCTested>
+		<LOCUnTested>86</LOCUnTested>
+		<PercentCoverage>10.42</PercentCoverage>
+		<CoverageMetric>0.19</CoverageMetric>
+	</File>
+	<File Name="unchecked.h" FullPath="./lib/utfcpp/source/utf8/unchecked.h" Covered="true">
+		<LOCTested>30</LOCTested>
+		<LOCUnTested>15</LOCUnTested>
+		<PercentCoverage>66.67</PercentCoverage>
+		<CoverageMetric>0.73</CoverageMetric>
+	</File>
+	<File Name="account.cc" FullPath="./src/account.cc" Covered="true">
+		<LOCTested>301</LOCTested>
+		<LOCUnTested>126</LOCUnTested>
+		<PercentCoverage>70.49</PercentCoverage>
+		<CoverageMetric>0.71</CoverageMetric>
+	</File>
+	<File Name="account.h" FullPath="./src/account.h" Covered="true">
+		<LOCTested>47</LOCTested>
+		<LOCUnTested>8</LOCUnTested>
+		<PercentCoverage>85.45</PercentCoverage>
+		<CoverageMetric>0.88</CoverageMetric>
+	</File>
+	<File Name="amount.cc" FullPath="./src/amount.cc" Covered="true">
+		<LOCTested>656</LOCTested>
+		<LOCUnTested>81</LOCUnTested>
+		<PercentCoverage>89.01</PercentCoverage>
+		<CoverageMetric>0.89</CoverageMetric>
+	</File>
+	<File Name="amount.h" FullPath="./src/amount.h" Covered="true">
+		<LOCTested>143</LOCTested>
+		<LOCUnTested>2</LOCUnTested>
+		<PercentCoverage>98.62</PercentCoverage>
+		<CoverageMetric>0.99</CoverageMetric>
+	</File>
+	<File Name="annotate.cc" FullPath="./src/annotate.cc" Covered="true">
+		<LOCTested>173</LOCTested>
+		<LOCUnTested>36</LOCUnTested>
+		<PercentCoverage>82.78</PercentCoverage>
+		<CoverageMetric>0.84</CoverageMetric>
+	</File>
+	<File Name="annotate.h" FullPath="./src/annotate.h" Covered="true">
+		<LOCTested>58</LOCTested>
+		<LOCUnTested>11</LOCUnTested>
+		<PercentCoverage>84.06</PercentCoverage>
+		<CoverageMetric>0.86</CoverageMetric>
+	</File>
+	<File Name="balance.cc" FullPath="./src/balance.cc" Covered="true">
+		<LOCTested>102</LOCTested>
+		<LOCUnTested>66</LOCUnTested>
+		<PercentCoverage>60.71</PercentCoverage>
+		<CoverageMetric>0.63</CoverageMetric>
+	</File>
+	<File Name="balance.h" FullPath="./src/balance.h" Covered="true">
+		<LOCTested>62</LOCTested>
+		<LOCUnTested>76</LOCUnTested>
+		<PercentCoverage>44.93</PercentCoverage>
+		<CoverageMetric>0.49</CoverageMetric>
+	</File>
+	<File Name="chain.cc" FullPath="./src/chain.cc" Covered="true">
+		<LOCTested>89</LOCTested>
+		<LOCUnTested>2</LOCUnTested>
+		<PercentCoverage>97.80</PercentCoverage>
+		<CoverageMetric>0.98</CoverageMetric>
+	</File>
+	<File Name="chain.h" FullPath="./src/chain.h" Covered="true">
+		<LOCTested>30</LOCTested>
+		<LOCUnTested>0</LOCUnTested>
+		<PercentCoverage>100.00</PercentCoverage>
+		<CoverageMetric>1.00</CoverageMetric>
+	</File>
+	<File Name="commodity.cc" FullPath="./src/commodity.cc" Covered="true">
+		<LOCTested>180</LOCTested>
+		<LOCUnTested>94</LOCUnTested>
+		<PercentCoverage>65.69</PercentCoverage>
+		<CoverageMetric>0.67</CoverageMetric>
+	</File>
+	<File Name="commodity.h" FullPath="./src/commodity.h" Covered="true">
+		<LOCTested>66</LOCTested>
+		<LOCUnTested>5</LOCUnTested>
+		<PercentCoverage>92.96</PercentCoverage>
+		<CoverageMetric>0.94</CoverageMetric>
+	</File>
+	<File Name="compare.cc" FullPath="./src/compare.cc" Covered="true">
+		<LOCTested>45</LOCTested>
+		<LOCUnTested>2</LOCUnTested>
+		<PercentCoverage>95.74</PercentCoverage>
+		<CoverageMetric>0.96</CoverageMetric>
+	</File>
+	<File Name="compare.h" FullPath="./src/compare.h" Covered="true">
+		<LOCTested>12</LOCTested>
+		<LOCUnTested>0</LOCUnTested>
+		<PercentCoverage>100.00</PercentCoverage>
+		<CoverageMetric>1.00</CoverageMetric>
+	</File>
+	<File Name="context.h" FullPath="./src/context.h" Covered="true">
+		<LOCTested>40</LOCTested>
+		<LOCUnTested>2</LOCUnTested>
+		<PercentCoverage>95.24</PercentCoverage>
+		<CoverageMetric>0.96</CoverageMetric>
+	</File>
+	<File Name="convert.cc" FullPath="./src/convert.cc" Covered="true">
+		<LOCTested>38</LOCTested>
+		<LOCUnTested>11</LOCUnTested>
+		<PercentCoverage>77.55</PercentCoverage>
+		<CoverageMetric>0.81</CoverageMetric>
+	</File>
+	<File Name="csv.cc" FullPath="./src/csv.cc" Covered="true">
+		<LOCTested>142</LOCTested>
+		<LOCUnTested>19</LOCUnTested>
+		<PercentCoverage>88.20</PercentCoverage>
+		<CoverageMetric>0.89</CoverageMetric>
+	</File>
+	<File Name="csv.h" FullPath="./src/csv.h" Covered="true">
+		<LOCTested>10</LOCTested>
+		<LOCUnTested>4</LOCUnTested>
+		<PercentCoverage>71.43</PercentCoverage>
+		<CoverageMetric>0.83</CoverageMetric>
+	</File>
+	<File Name="draft.cc" FullPath="./src/draft.cc" Covered="true">
+		<LOCTested>156</LOCTested>
+		<LOCUnTested>144</LOCUnTested>
+		<PercentCoverage>52.00</PercentCoverage>
+		<CoverageMetric>0.54</CoverageMetric>
+	</File>
+	<File Name="draft.h" FullPath="./src/draft.h" Covered="true">
+		<LOCTested>25</LOCTested>
+		<LOCUnTested>8</LOCUnTested>
+		<PercentCoverage>75.76</PercentCoverage>
+		<CoverageMetric>0.81</CoverageMetric>
+	</File>
+	<File Name="emacs.cc" FullPath="./src/emacs.cc" Covered="true">
+		<LOCTested>1</LOCTested>
+		<LOCUnTested>50</LOCUnTested>
+		<PercentCoverage>1.96</PercentCoverage>
+		<CoverageMetric>0.18</CoverageMetric>
+	</File>
+	<File Name="emacs.h" FullPath="./src/emacs.h" Covered="true">
+		<LOCTested>0</LOCTested>
+		<LOCUnTested>12</LOCUnTested>
+		<PercentCoverage>0.00</PercentCoverage>
+		<CoverageMetric>0.45</CoverageMetric>
+	</File>
+	<File Name="error.cc" FullPath="./src/error.cc" Covered="true">
+		<LOCTested>43</LOCTested>
+		<LOCUnTested>3</LOCUnTested>
+		<PercentCoverage>93.48</PercentCoverage>
+		<CoverageMetric>0.95</CoverageMetric>
+	</File>
+	<File Name="error.h" FullPath="./src/error.h" Covered="true">
+		<LOCTested>10</LOCTested>
+		<LOCUnTested>0</LOCUnTested>
+		<PercentCoverage>100.00</PercentCoverage>
+		<CoverageMetric>1.00</CoverageMetric>
+	</File>
+	<File Name="expr.cc" FullPath="./src/expr.cc" Covered="true">
+		<LOCTested>99</LOCTested>
+		<LOCUnTested>44</LOCUnTested>
+		<PercentCoverage>69.23</PercentCoverage>
+		<CoverageMetric>0.71</CoverageMetric>
+	</File>
+	<File Name="expr.h" FullPath="./src/expr.h" Covered="true">
+		<LOCTested>16</LOCTested>
+		<LOCUnTested>3</LOCUnTested>
+		<PercentCoverage>84.21</PercentCoverage>
+		<CoverageMetric>0.90</CoverageMetric>
+	</File>
+	<File Name="exprbase.h" FullPath="./src/exprbase.h" Covered="true">
+		<LOCTested>57</LOCTested>
+		<LOCUnTested>15</LOCUnTested>
+		<PercentCoverage>79.17</PercentCoverage>
+		<CoverageMetric>0.82</CoverageMetric>
+	</File>
+	<File Name="filters.cc" FullPath="./src/filters.cc" Covered="true">
+		<LOCTested>753</LOCTested>
+		<LOCUnTested>42</LOCUnTested>
+		<PercentCoverage>94.72</PercentCoverage>
+		<CoverageMetric>0.95</CoverageMetric>
+	</File>
+	<File Name="filters.h" FullPath="./src/filters.h" Covered="true">
+		<LOCTested>273</LOCTested>
+		<LOCUnTested>110</LOCUnTested>
+		<PercentCoverage>71.28</PercentCoverage>
+		<CoverageMetric>0.72</CoverageMetric>
+	</File>
+	<File Name="flags.h" FullPath="./src/flags.h" Covered="true">
+		<LOCTested>73</LOCTested>
+		<LOCUnTested>0</LOCUnTested>
+		<PercentCoverage>100.00</PercentCoverage>
+		<CoverageMetric>1.00</CoverageMetric>
+	</File>
+	<File Name="format.cc" FullPath="./src/format.cc" Covered="true">
+		<LOCTested>259</LOCTested>
+		<LOCUnTested>88</LOCUnTested>
+		<PercentCoverage>74.64</PercentCoverage>
+		<CoverageMetric>0.75</CoverageMetric>
+	</File>
+	<File Name="format.h" FullPath="./src/format.h" Covered="true">
+		<LOCTested>42</LOCTested>
+		<LOCUnTested>1</LOCUnTested>
+		<PercentCoverage>97.67</PercentCoverage>
+		<CoverageMetric>0.98</CoverageMetric>
+	</File>
+	<File Name="generate.cc" FullPath="./src/generate.cc" Covered="true">
+		<LOCTested>1</LOCTested>
+		<LOCUnTested>209</LOCUnTested>
+		<PercentCoverage>0.48</PercentCoverage>
+		<CoverageMetric>0.05</CoverageMetric>
+	</File>
+	<File Name="generate.h" FullPath="./src/generate.h" Covered="true">
+		<LOCTested>0</LOCTested>
+		<LOCUnTested>3</LOCUnTested>
+		<PercentCoverage>0.00</PercentCoverage>
+		<CoverageMetric>0.77</CoverageMetric>
+	</File>
+	<File Name="global.cc" FullPath="./src/global.cc" Covered="true">
+		<LOCTested>116</LOCTested>
+		<LOCUnTested>127</LOCUnTested>
+		<PercentCoverage>47.74</PercentCoverage>
+		<CoverageMetric>0.50</CoverageMetric>
+	</File>
+	<File Name="global.h" FullPath="./src/global.h" Covered="true">
+		<LOCTested>23</LOCTested>
+		<LOCUnTested>27</LOCUnTested>
+		<PercentCoverage>46.00</PercentCoverage>
+		<CoverageMetric>0.55</CoverageMetric>
+	</File>
+	<File Name="history.cc" FullPath="./src/history.cc" Covered="true">
+		<LOCTested>200</LOCTested>
+		<LOCUnTested>25</LOCUnTested>
+		<PercentCoverage>88.89</PercentCoverage>
+		<CoverageMetric>0.89</CoverageMetric>
+	</File>
+	<File Name="item.cc" FullPath="./src/item.cc" Covered="true">
+		<LOCTested>220</LOCTested>
+		<LOCUnTested>126</LOCUnTested>
+		<PercentCoverage>63.58</PercentCoverage>
+		<CoverageMetric>0.65</CoverageMetric>
+	</File>
+	<File Name="item.h" FullPath="./src/item.h" Covered="true">
+		<LOCTested>61</LOCTested>
+		<LOCUnTested>11</LOCUnTested>
+		<PercentCoverage>84.72</PercentCoverage>
+		<CoverageMetric>0.87</CoverageMetric>
+	</File>
+	<File Name="iterators.cc" FullPath="./src/iterators.cc" Covered="true">
+		<LOCTested>124</LOCTested>
+		<LOCUnTested>9</LOCUnTested>
+		<PercentCoverage>93.23</PercentCoverage>
+		<CoverageMetric>0.94</CoverageMetric>
+	</File>
+	<File Name="iterators.h" FullPath="./src/iterators.h" Covered="true">
+		<LOCTested>98</LOCTested>
+		<LOCUnTested>3</LOCUnTested>
+		<PercentCoverage>97.03</PercentCoverage>
+		<CoverageMetric>0.97</CoverageMetric>
+	</File>
+	<File Name="journal.cc" FullPath="./src/journal.cc" Covered="true">
+		<LOCTested>225</LOCTested>
+		<LOCUnTested>76</LOCUnTested>
+		<PercentCoverage>74.75</PercentCoverage>
+		<CoverageMetric>0.76</CoverageMetric>
+	</File>
+	<File Name="journal.h" FullPath="./src/journal.h" Covered="true">
+		<LOCTested>20</LOCTested>
+		<LOCUnTested>0</LOCUnTested>
+		<PercentCoverage>100.00</PercentCoverage>
+		<CoverageMetric>1.00</CoverageMetric>
+	</File>
+	<File Name="lookup.cc" FullPath="./src/lookup.cc" Covered="true">
+		<LOCTested>95</LOCTested>
+		<LOCUnTested>5</LOCUnTested>
+		<PercentCoverage>95.00</PercentCoverage>
+		<CoverageMetric>0.95</CoverageMetric>
+	</File>
+	<File Name="main.cc" FullPath="./src/main.cc" Covered="true">
+		<LOCTested>28</LOCTested>
+		<LOCUnTested>27</LOCUnTested>
+		<PercentCoverage>50.91</PercentCoverage>
+		<CoverageMetric>0.58</CoverageMetric>
+	</File>
+	<File Name="mask.cc" FullPath="./src/mask.cc" Covered="true">
+		<LOCTested>17</LOCTested>
+		<LOCUnTested>12</LOCUnTested>
+		<PercentCoverage>58.62</PercentCoverage>
+		<CoverageMetric>0.69</CoverageMetric>
+	</File>
+	<File Name="mask.h" FullPath="./src/mask.h" Covered="true">
+		<LOCTested>25</LOCTested>
+		<LOCUnTested>12</LOCUnTested>
+		<PercentCoverage>67.57</PercentCoverage>
+		<CoverageMetric>0.74</CoverageMetric>
+	</File>
+	<File Name="op.cc" FullPath="./src/op.cc" Covered="true">
+		<LOCTested>343</LOCTested>
+		<LOCUnTested>228</LOCUnTested>
+		<PercentCoverage>60.07</PercentCoverage>
+		<CoverageMetric>0.61</CoverageMetric>
+	</File>
+	<File Name="op.h" FullPath="./src/op.h" Covered="true">
+		<LOCTested>120</LOCTested>
+		<LOCUnTested>2</LOCUnTested>
+		<PercentCoverage>98.36</PercentCoverage>
+		<CoverageMetric>0.98</CoverageMetric>
+	</File>
+	<File Name="option.cc" FullPath="./src/option.cc" Covered="true">
+		<LOCTested>86</LOCTested>
+		<LOCUnTested>28</LOCUnTested>
+		<PercentCoverage>75.44</PercentCoverage>
+		<CoverageMetric>0.77</CoverageMetric>
+	</File>
+	<File Name="option.h" FullPath="./src/option.h" Covered="true">
+		<LOCTested>59</LOCTested>
+		<LOCUnTested>34</LOCUnTested>
+		<PercentCoverage>63.44</PercentCoverage>
+		<CoverageMetric>0.67</CoverageMetric>
+	</File>
+	<File Name="org.cc" FullPath="./src/org.cc" Covered="true">
+		<LOCTested>61</LOCTested>
+		<LOCUnTested>21</LOCUnTested>
+		<PercentCoverage>74.39</PercentCoverage>
+		<CoverageMetric>0.77</CoverageMetric>
+	</File>
+	<File Name="org.h" FullPath="./src/org.h" Covered="true">
+		<LOCTested>3</LOCTested>
+		<LOCUnTested>8</LOCUnTested>
+		<PercentCoverage>27.27</PercentCoverage>
+		<CoverageMetric>0.62</CoverageMetric>
+	</File>
+	<File Name="output.cc" FullPath="./src/output.cc" Covered="true">
+		<LOCTested>206</LOCTested>
+		<LOCUnTested>11</LOCUnTested>
+		<PercentCoverage>94.93</PercentCoverage>
+		<CoverageMetric>0.95</CoverageMetric>
+	</File>
+	<File Name="output.h" FullPath="./src/output.h" Covered="true">
+		<LOCTested>42</LOCTested>
+		<LOCUnTested>22</LOCUnTested>
+		<PercentCoverage>65.62</PercentCoverage>
+		<CoverageMetric>0.70</CoverageMetric>
+	</File>
+	<File Name="parser.cc" FullPath="./src/parser.cc" Covered="true">
+		<LOCTested>275</LOCTested>
+		<LOCUnTested>40</LOCUnTested>
+		<PercentCoverage>87.30</PercentCoverage>
+		<CoverageMetric>0.88</CoverageMetric>
+	</File>
+	<File Name="parser.h" FullPath="./src/parser.h" Covered="true">
+		<LOCTested>16</LOCTested>
+		<LOCUnTested>1</LOCUnTested>
+		<PercentCoverage>94.12</PercentCoverage>
+		<CoverageMetric>0.96</CoverageMetric>
+	</File>
+	<File Name="pool.cc" FullPath="./src/pool.cc" Covered="true">
+		<LOCTested>172</LOCTested>
+		<LOCUnTested>9</LOCUnTested>
+		<PercentCoverage>95.03</PercentCoverage>
+		<CoverageMetric>0.95</CoverageMetric>
+	</File>
+	<File Name="pool.h" FullPath="./src/pool.h" Covered="true">
+		<LOCTested>4</LOCTested>
+		<LOCUnTested>0</LOCUnTested>
+		<PercentCoverage>100.00</PercentCoverage>
+		<CoverageMetric>1.00</CoverageMetric>
+	</File>
+	<File Name="post.cc" FullPath="./src/post.cc" Covered="true">
+		<LOCTested>233</LOCTested>
+		<LOCUnTested>206</LOCUnTested>
+		<PercentCoverage>53.08</PercentCoverage>
+		<CoverageMetric>0.54</CoverageMetric>
+	</File>
+	<File Name="post.h" FullPath="./src/post.h" Covered="true">
+		<LOCTested>51</LOCTested>
+		<LOCUnTested>9</LOCUnTested>
+		<PercentCoverage>85.00</PercentCoverage>
+		<CoverageMetric>0.87</CoverageMetric>
+	</File>
+	<File Name="precmd.cc" FullPath="./src/precmd.cc" Covered="true">
+		<LOCTested>60</LOCTested>
+		<LOCUnTested>45</LOCUnTested>
+		<PercentCoverage>57.14</PercentCoverage>
+		<CoverageMetric>0.61</CoverageMetric>
+	</File>
+	<File Name="predicate.h" FullPath="./src/predicate.h" Covered="true">
+		<LOCTested>23</LOCTested>
+		<LOCUnTested>0</LOCUnTested>
+		<PercentCoverage>100.00</PercentCoverage>
+		<CoverageMetric>1.00</CoverageMetric>
+	</File>
+	<File Name="print.cc" FullPath="./src/print.cc" Covered="true">
+		<LOCTested>149</LOCTested>
+		<LOCUnTested>21</LOCUnTested>
+		<PercentCoverage>87.65</PercentCoverage>
+		<CoverageMetric>0.88</CoverageMetric>
+	</File>
+	<File Name="print.h" FullPath="./src/print.h" Covered="true">
+		<LOCTested>7</LOCTested>
+		<LOCUnTested>5</LOCUnTested>
+		<PercentCoverage>58.33</PercentCoverage>
+		<CoverageMetric>0.77</CoverageMetric>
+	</File>
+	<File Name="pstream.h" FullPath="./src/pstream.h" Covered="true">
+		<LOCTested>24</LOCTested>
+		<LOCUnTested>3</LOCUnTested>
+		<PercentCoverage>88.89</PercentCoverage>
+		<CoverageMetric>0.92</CoverageMetric>
+	</File>
+	<File Name="ptree.cc" FullPath="./src/ptree.cc" Covered="true">
+		<LOCTested>1</LOCTested>
+		<LOCUnTested>37</LOCUnTested>
+		<PercentCoverage>2.63</PercentCoverage>
+		<CoverageMetric>0.23</CoverageMetric>
+	</File>
+	<File Name="ptree.h" FullPath="./src/ptree.h" Covered="true">
+		<LOCTested>0</LOCTested>
+		<LOCUnTested>13</LOCUnTested>
+		<PercentCoverage>0.00</PercentCoverage>
+		<CoverageMetric>0.43</CoverageMetric>
+	</File>
+	<File Name="query.cc" FullPath="./src/query.cc" Covered="true">
+		<LOCTested>197</LOCTested>
+		<LOCUnTested>109</LOCUnTested>
+		<PercentCoverage>64.38</PercentCoverage>
+		<CoverageMetric>0.66</CoverageMetric>
+	</File>
+	<File Name="query.h" FullPath="./src/query.h" Covered="true">
+		<LOCTested>74</LOCTested>
+		<LOCUnTested>29</LOCUnTested>
+		<PercentCoverage>71.84</PercentCoverage>
+		<CoverageMetric>0.74</CoverageMetric>
+	</File>
+	<File Name="quotes.cc" FullPath="./src/quotes.cc" Covered="true">
+		<LOCTested>1</LOCTested>
+		<LOCUnTested>39</LOCUnTested>
+		<PercentCoverage>2.50</PercentCoverage>
+		<CoverageMetric>0.22</CoverageMetric>
+	</File>
+	<File Name="report.cc" FullPath="./src/report.cc" Covered="true">
+		<LOCTested>752</LOCTested>
+		<LOCUnTested>285</LOCUnTested>
+		<PercentCoverage>72.52</PercentCoverage>
+		<CoverageMetric>0.73</CoverageMetric>
+	</File>
+	<File Name="report.h" FullPath="./src/report.h" Covered="true">
+		<LOCTested>171</LOCTested>
+		<LOCUnTested>135</LOCUnTested>
+		<PercentCoverage>55.88</PercentCoverage>
+		<CoverageMetric>0.57</CoverageMetric>
+	</File>
+	<File Name="scope.cc" FullPath="./src/scope.cc" Covered="true">
+		<LOCTested>32</LOCTested>
+		<LOCUnTested>4</LOCUnTested>
+		<PercentCoverage>88.89</PercentCoverage>
+		<CoverageMetric>0.91</CoverageMetric>
+	</File>
+	<File Name="scope.h" FullPath="./src/scope.h" Covered="true">
+		<LOCTested>203</LOCTested>
+		<LOCUnTested>41</LOCUnTested>
+		<PercentCoverage>83.20</PercentCoverage>
+		<CoverageMetric>0.84</CoverageMetric>
+	</File>
+	<File Name="select.cc" FullPath="./src/select.cc" Covered="true">
+		<LOCTested>185</LOCTested>
+		<LOCUnTested>57</LOCUnTested>
+		<PercentCoverage>76.45</PercentCoverage>
+		<CoverageMetric>0.77</CoverageMetric>
+	</File>
+	<File Name="session.cc" FullPath="./src/session.cc" Covered="true">
+		<LOCTested>145</LOCTested>
+		<LOCUnTested>74</LOCUnTested>
+		<PercentCoverage>66.21</PercentCoverage>
+		<CoverageMetric>0.68</CoverageMetric>
+	</File>
+	<File Name="session.h" FullPath="./src/session.h" Covered="true">
+		<LOCTested>21</LOCTested>
+		<LOCUnTested>26</LOCUnTested>
+		<PercentCoverage>44.68</PercentCoverage>
+		<CoverageMetric>0.54</CoverageMetric>
+	</File>
+	<File Name="stats.cc" FullPath="./src/stats.cc" Covered="true">
+		<LOCTested>51</LOCTested>
+		<LOCUnTested>2</LOCUnTested>
+		<PercentCoverage>96.23</PercentCoverage>
+		<CoverageMetric>0.97</CoverageMetric>
+	</File>
+	<File Name="stream.cc" FullPath="./src/stream.cc" Covered="true">
+		<LOCTested>13</LOCTested>
+		<LOCUnTested>25</LOCUnTested>
+		<PercentCoverage>34.21</PercentCoverage>
+		<CoverageMetric>0.48</CoverageMetric>
+	</File>
+	<File Name="stream.h" FullPath="./src/stream.h" Covered="true">
+		<LOCTested>8</LOCTested>
+		<LOCUnTested>8</LOCUnTested>
+		<PercentCoverage>50.00</PercentCoverage>
+		<CoverageMetric>0.69</CoverageMetric>
+	</File>
+	<File Name="temps.cc" FullPath="./src/temps.cc" Covered="true">
+		<LOCTested>63</LOCTested>
+		<LOCUnTested>0</LOCUnTested>
+		<PercentCoverage>100.00</PercentCoverage>
+		<CoverageMetric>1.00</CoverageMetric>
+	</File>
+	<File Name="temps.h" FullPath="./src/temps.h" Covered="true">
+		<LOCTested>9</LOCTested>
+		<LOCUnTested>0</LOCUnTested>
+		<PercentCoverage>100.00</PercentCoverage>
+		<CoverageMetric>1.00</CoverageMetric>
+	</File>
+	<File Name="textual.cc" FullPath="./src/textual.cc" Covered="true">
+		<LOCTested>927</LOCTested>
+		<LOCUnTested>127</LOCUnTested>
+		<PercentCoverage>87.95</PercentCoverage>
+		<CoverageMetric>0.88</CoverageMetric>
+	</File>
+	<File Name="timelog.cc" FullPath="./src/timelog.cc" Covered="true">
+		<LOCTested>65</LOCTested>
+		<LOCUnTested>33</LOCUnTested>
+		<PercentCoverage>66.33</PercentCoverage>
+		<CoverageMetric>0.69</CoverageMetric>
+	</File>
+	<File Name="timelog.h" FullPath="./src/timelog.h" Covered="true">
+		<LOCTested>21</LOCTested>
+		<LOCUnTested>1</LOCUnTested>
+		<PercentCoverage>95.45</PercentCoverage>
+		<CoverageMetric>0.97</CoverageMetric>
+	</File>
+	<File Name="times.cc" FullPath="./src/times.cc" Covered="true">
+		<LOCTested>589</LOCTested>
+		<LOCUnTested>439</LOCUnTested>
+		<PercentCoverage>57.30</PercentCoverage>
+		<CoverageMetric>0.58</CoverageMetric>
+	</File>
+	<File Name="times.h" FullPath="./src/times.h" Covered="true">
+		<LOCTested>153</LOCTested>
+		<LOCUnTested>36</LOCUnTested>
+		<PercentCoverage>80.95</PercentCoverage>
+		<CoverageMetric>0.82</CoverageMetric>
+	</File>
+	<File Name="token.cc" FullPath="./src/token.cc" Covered="true">
+		<LOCTested>248</LOCTested>
+		<LOCUnTested>130</LOCUnTested>
+		<PercentCoverage>65.61</PercentCoverage>
+		<CoverageMetric>0.66</CoverageMetric>
+	</File>
+	<File Name="token.h" FullPath="./src/token.h" Covered="true">
+		<LOCTested>15</LOCTested>
+		<LOCUnTested>2</LOCUnTested>
+		<PercentCoverage>88.24</PercentCoverage>
+		<CoverageMetric>0.93</CoverageMetric>
+	</File>
+	<File Name="unistring.h" FullPath="./src/unistring.h" Covered="true">
+		<LOCTested>54</LOCTested>
+		<LOCUnTested>0</LOCUnTested>
+		<PercentCoverage>100.00</PercentCoverage>
+		<CoverageMetric>1.00</CoverageMetric>
+	</File>
+	<File Name="utils.cc" FullPath="./src/utils.cc" Covered="true">
+		<LOCTested>40</LOCTested>
+		<LOCUnTested>366</LOCUnTested>
+		<PercentCoverage>9.85</PercentCoverage>
+		<CoverageMetric>0.12</CoverageMetric>
+	</File>
+	<File Name="utils.h" FullPath="./src/utils.h" Covered="true">
+		<LOCTested>58</LOCTested>
+		<LOCUnTested>11</LOCUnTested>
+		<PercentCoverage>84.06</PercentCoverage>
+		<CoverageMetric>0.86</CoverageMetric>
+	</File>
+	<File Name="value.cc" FullPath="./src/value.cc" Covered="true">
+		<LOCTested>506</LOCTested>
+		<LOCUnTested>644</LOCUnTested>
+		<PercentCoverage>44.00</PercentCoverage>
+		<CoverageMetric>0.44</CoverageMetric>
+	</File>
+	<File Name="value.h" FullPath="./src/value.h" Covered="true">
+		<LOCTested>326</LOCTested>
+		<LOCUnTested>35</LOCUnTested>
+		<PercentCoverage>90.30</PercentCoverage>
+		<CoverageMetric>0.91</CoverageMetric>
+	</File>
+	<File Name="wcwidth.cc" FullPath="./src/wcwidth.cc" Covered="true">
+		<LOCTested>23</LOCTested>
+		<LOCUnTested>31</LOCUnTested>
+		<PercentCoverage>42.59</PercentCoverage>
+		<CoverageMetric>0.52</CoverageMetric>
+	</File>
+	<File Name="xact.cc" FullPath="./src/xact.cc" Covered="true">
+		<LOCTested>330</LOCTested>
+		<LOCUnTested>131</LOCUnTested>
+		<PercentCoverage>71.58</PercentCoverage>
+		<CoverageMetric>0.72</CoverageMetric>
+	</File>
+	<File Name="xact.h" FullPath="./src/xact.h" Covered="true">
+		<LOCTested>30</LOCTested>
+		<LOCUnTested>25</LOCUnTested>
+		<PercentCoverage>54.55</PercentCoverage>
+		<CoverageMetric>0.62</CoverageMetric>
+	</File>
+	<File Name="t_amount.cc" FullPath="./test/unit/t_amount.cc" Covered="true">
+		<LOCTested>1042</LOCTested>
+		<LOCUnTested>0</LOCUnTested>
+		<PercentCoverage>100.00</PercentCoverage>
+		<CoverageMetric>1.00</CoverageMetric>
+	</File>
+	<File Name="t_balance.cc" FullPath="./test/unit/t_balance.cc" Covered="true">
+		<LOCTested>1</LOCTested>
+		<LOCUnTested>0</LOCUnTested>
+		<PercentCoverage>100.00</PercentCoverage>
+		<CoverageMetric>1.00</CoverageMetric>
+	</File>
+	<File Name="t_commodity.cc" FullPath="./test/unit/t_commodity.cc" Covered="true">
+		<LOCTested>67</LOCTested>
+		<LOCUnTested>0</LOCUnTested>
+		<PercentCoverage>100.00</PercentCoverage>
+		<CoverageMetric>1.00</CoverageMetric>
+	</File>
+	<File Name="t_expr.cc" FullPath="./test/unit/t_expr.cc" Covered="true">
+		<LOCTested>203</LOCTested>
+		<LOCUnTested>0</LOCUnTested>
+		<PercentCoverage>100.00</PercentCoverage>
+		<CoverageMetric>1.00</CoverageMetric>
+	</File>
+	<File Name="t_times.cc" FullPath="./test/unit/t_times.cc" Covered="true">
+		<LOCTested>39</LOCTested>
+		<LOCUnTested>0</LOCUnTested>
+		<PercentCoverage>100.00</PercentCoverage>
+		<CoverageMetric>1.00</CoverageMetric>
+	</File>
+	<LOCTested>13891</LOCTested>
+	<LOCUntested>5426</LOCUntested>
+	<LOC>19317</LOC>
+	<PercentCoverage>71.91</PercentCoverage>
+	<EndDateTime>Jul 14 16:46 IST</EndDateTime>
+	<EndTime>1405336598</EndTime>
+<ElapsedMinutes>0.40</ElapsedMinutes></Coverage>
+</Site>
