@@ -46,7 +46,7 @@ tag IncomeType
 
 tag Program
     assert value =~ /[ A-z0-9\-]+(:[ A-z0-9\-]+)*/
-    check  value =~ /^(Main Org:(Overhead|Direct Fundraising))$/
+    check  value =~ /^(Main Org:(Overhead|Direct Fundraising|Software:Internal))$/
 
 
 ; Entity tag is just a string, but shouldn't have spaces, just letters,
