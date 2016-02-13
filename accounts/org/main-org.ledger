@@ -7,7 +7,7 @@
         ;Receipt: accounts/documentation/org/receipts/2012-02-05_office-supply-galore.txt
     Expense:Main Org:Office Supplies          $35.00
         ;Program: Main Org:Overhead
-    Liabilities:Credit Card:Visa             -$35.00
+    Liabilities:Credit Card:Visa             $-35.00
 
 2011/05/28 My Bad Billing Hosting - NEVER CHARGED
     Liabilities:Credit Card:Visa            $-100.00
