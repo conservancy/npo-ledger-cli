@@ -51,31 +51,31 @@ account Accrued:Accounts Payable:Main Org
 define expenseChecker() = (tag("Receipt") !~ /^\s*$/ or tag("Invoice") !~ /^\s*$/ or tag("Statement") !~ /^\s*$/) and tag("Program") !~ /^\s*$/
 ; or payee =~ /NEVER CHARGED/
 
-account Expense:Main Org:Office Supplies
+account Expenses:Main Org:Office Supplies
     assert expenseChecker() or payee =~ /NEVER CHARGED/
     note Main Organization's Office Supplies and Sundries
 
-account Expense:Main Org:Payroll:Salary
+account Expenses:Main Org:Payroll:Salary
     assert expenseChecker() or payee =~ /NEVER CHARGED/
     note Main Organization's Staff Salaries
 
-account Expense:Main Org:Payroll:Benefits
+account Expenses:Main Org:Payroll:Benefits
     assert expenseChecker() or payee =~ /NEVER CHARGED/
     note Main Organization's Staff Benefits
 
-account Expense:Main Org:Phones
+account Expenses:Main Org:Phones
     assert expenseChecker() or payee =~ /NEVER CHARGED/
     note Main Organization's Phone Expenses
 
-account Expense:Main Org:Hosting
+account Expenses:Main Org:Hosting
     assert expenseChecker() or payee =~ /NEVER CHARGED/
     note Main Organization's Network Hosting Provider services
 
-account Expense:Main Org:Development
+account Expenses:Main Org:Development
     assert expenseChecker() or payee =~ /NEVER CHARGED/
     note Main Organization's software development expenses
 
-account Expense:Main Org:Occupancy
+account Expenses:Main Org:Occupancy
     assert expenseChecker() or payee =~ /NEVER CHARGED/
     note Main Organization's Occupancy for Office Space and the like
 

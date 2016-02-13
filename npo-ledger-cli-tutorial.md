@@ -75,7 +75,7 @@ accounts receivable, loans payable and loans receivable.
 ### Expense Accounts
 
 These accounts contain any expense of the organization, and all begin with
-`Expense:`.
+`Expenses:`.
 
 ### Income Accounts
 
@@ -188,7 +188,7 @@ the tag is a relative path name of a file elsewhere in the same repository
 that documents the specific expense.  For example, an entry like this:
 
      2012-02-05 Office Supply Galore - Online Order
-         Expense:Main Org:Office Supplies      $35.00
+         Expenses:Main Org:Office Supplies     $35.00
              ;Receipt: accounts/documentation/org/receipts/2012-02-05_office-supply-galore.txt
          Liabilities:Credit Card:Visa         -$35.00
 
@@ -360,7 +360,7 @@ The possible values for this field are:
 #### Program Tag
 
 The `Program` tag is used primarily to track program activity for `Income:`
-and `Expense:` accounts.  This allows for knowing what particular initiative
+and `Expenses:` accounts.  This allows for knowing what particular initiative
 initiated the income (e.g., a specific fundraising campaign) and/or what
 particular program activity an expense is toward (e.g., funding travel to
 some specific conference).
@@ -380,7 +380,7 @@ ledger itself via the configurations found in `config-tags.ledger` and
 
 #### Expense Account Documentation
 
-Each `Expense:` account entry must be tagged with the following tags:
+Each `Expenses:` account entry must be tagged with the following tags:
 
 * One of: [`Invoice:`](#invoice-tag) [`Receipt:`](#receipt-tag), or
   [`Statement`](#statement-tag).  (The only exception to this rule: an entry
@@ -458,7 +458,7 @@ the successes of various fundraising programs with a command like this:
 Meanwhile, using the  [`Program`](#program-tag) tag for Expenses can help
 track what programs are costing with commands like these:
 
-    $ ledger -f accounts/books.ledger --group-by 'tag("Program")' reg '/^Expense/'
+    $ ledger -f accounts/books.ledger --group-by 'tag("Program")' reg '/^Expenses/'
 
 FIXME: example output
 
