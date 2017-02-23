@@ -442,6 +442,29 @@ Each `Income:` account must have the following tags:
 
 * A [`Program:`](#program-tag) tag.
 
+Reports For Various Situations
+------------------------------
+
+When data is well formed as specified herein, there are various quick reports
+that can be used to verify certain conditions or issues with accounting.
+Here are a few examples:
+
+### Verifying That An Invoice Is Paid
+
+Assume for this example that the shell variables `entity`, `program`, and
+`invoice` are set as follows:
+
+    $ entity=Sir-Moneybags; program='Main.*Org:.*Direct'; invoice=2012-05-30
+If the invoice was paid, this ledger command will have two lines of output,
+and the second line will be a transaction on the payment date.  If only one
+line appears, it's the receivable accrual and we see the invoice is not paid.
+
+    $ ledger -f accounts/books.ledger  -V --sort d --limit 'tag("Entity") =~ /'$entity'/ and tag("Program") =~ /'$program'/ and tag("Invoice") =~ /'$invoice'/' reg /Accrued/
+
+Alternatively, the following command will only have output if the invoice is unpaid:
+
+    $ ledger -f accounts/books.ledger  -V --limit 'tag("Entity") =~ /'$entity'/ and tag("Program") =~ /'$program'/ and tag("Invoice") =~ /'$invoice'/' bal /Accrued/
+
 Analysis of the Data
 --------------------
 

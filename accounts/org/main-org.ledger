@@ -21,11 +21,11 @@
 
 2012-05-03 Sir Moneybags
         ;Entity: Sir-Moneybags
+        ;Program: Main Org:Direct Fundraising
         ;Invoice: accounts/documentation/org/invoices/2012-05-30_moneybags-invoice_as-sent.txt
     Accrued:Accounts Receivable:Main Org  $100,000.00
     Income:Main Org:Donations            $-100,000.00
         ;IncomeType: Donations
-        ;Program: Main Org:Direct Fundraising
 
 2012-07-05 J. Developer
         ;Entity: Developer-J
