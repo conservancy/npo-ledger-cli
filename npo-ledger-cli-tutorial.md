@@ -455,6 +455,7 @@ Assume for this example that the shell variables `entity`, `program`, and
 `invoice` are set as follows:
 
     $ entity=Sir-Moneybags; program='Main.*Org:.*Direct'; invoice=2012-05-30
+
 If the invoice was paid, this ledger command will have two lines of output,
 and the second line will be a transaction on the payment date.  If only one
 line appears, it's the receivable accrual and we see the invoice is not paid.
@@ -464,6 +465,20 @@ line appears, it's the receivable accrual and we see the invoice is not paid.
 Alternatively, the following command will only have output if the invoice is unpaid:
 
     $ ledger -f accounts/books.ledger  -V --limit 'tag("Entity") =~ /'$entity'/ and tag("Program") =~ /'$program'/ and tag("Invoice") =~ /'$invoice'/' bal /Accrued/
+
+### Calculating Donation Portion of Invoice
+
+As described in
+[IRS 501(c)(3) rules](https://www.irs.gov/charities-non-profits/substantiating-charitable-contributions),
+a charity must substantiate portions of a contribution that are RBI, and
+portions that are donations separately and inform the donor which portion was
+a donation that may be eligible for tax deduction.  Use of the `IncomeType`
+tag facilities collection of the necessary data to determine the total, and
+the following command line will total up all the donation portions for a
+particular invoice:
+
+    $ entity=BigCorp; program=Foo.*Conf.*2017; invoice=2016-01-30
+    $ ledger -f accounts/books.ledger  -V --sort d --limit 'tag("IncomeType") =~ /Donation/ and tag("Entity") =~ /'$entity'/ and tag("Program") =~ /'$program'/ and tag("Invoice") =~ /'$invoice'/' reg
 
 Analysis of the Data
 --------------------

@@ -3,3 +3,4 @@
 
 !include config/config-npo.ledger
 !include org/main-org.ledger
+!include fooproject/foo.ledger
