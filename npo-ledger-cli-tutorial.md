@@ -261,6 +261,21 @@ Some examples of appropriate uses of the `Statement:` tag are:
   [receipt](#receipt-tag), but definitely is valid backup documentation for
   the transaction.
 
+#### TaxReporting Tag
+
+The `TaxReporting` tag is an optional tag for `Assets` accounts that debit to
+the account.
+
+When provided, the `TaxReporting` accompanies a `TaxImplication` information
+tag.  The TaxReporting refers to a document that verifies the choice for the
+`TaxImplication` tag.  For example, for individual contractors in the USA, a
+`TaxImplication` of `1099` would be well served by a `TaxImplication` that
+links to a [W-9](https://www.irs.gov/pub/irs-pdf/fw9.pdf) for the individual
+being paid.  For a individual foreign contractor, the `TaxReporting` might
+link to a
+[W8-BEN](https://www.irs.gov/uac/form-w-8ben-certificate-of-foreign-status-of-beneficial-owner-for-united-states-tax-withholding)
+for the payee.
+
 ### Information Tags
 
 In contrast to documentation tags, information tags can more traditionally be
