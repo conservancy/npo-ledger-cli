@@ -369,6 +369,18 @@ The Program tag is always a string with the same format as a Ledger CLI
 account (primarily for use with Ledger CLI's `--pivot` and `--group-by`,
 [as described later](#testing-program-success)).
 
+#### GrantLocation Tag
+
+The `GrantLocation` tag is used to indicate that an expense is a grant.  The
+value for the tag should indicate the geographical region.  It is recommend
+that the geographical reason be identified with the
+[ISO 3166-2](https://en.wikipedia.org/wiki/ISO_3166-2) two letter country
+code for the country where the grant goes.
+
+This tag is to assist in filing
+Form 990, [Schedule I](https://www.irs.gov/uac/about-schedule-i-form-990) and
+[Schedule F](https://www.irs.gov/charities-non-profits/exempt-organizations-annual-reporting-requirements-foreign-activities-form-990-schedule-f-activities-reported).
+
 ### Account Type Documentation Requirements
 
 Each account type has different documentation requirements.  Based on the
@@ -388,6 +400,10 @@ Each `Expenses:` account entry must be tagged with the following tags:
   [payee was never charged](#never-charged-payee).)
 
 * A [`Program:`](#program-tag) tag.
+
+Expense accounts can have the following optional tag:
+
+* A [`GrantLocation:`](#grantlocation-tag) tag.
 
 #### NEVER CHARGED Payee
 
