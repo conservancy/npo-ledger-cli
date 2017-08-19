@@ -35,7 +35,7 @@ at all for organizations outside the USA.
 Configuration of Chart of Accounts
 ----------------------------------
 
-The first thing any accountant will ask to see if your so-called "chart of
+The first thing any accountant will ask to see is your so-called "chart of
 accounts".  The first time I heard this phrase, I thought it was something
 complicated.  Fact of the matter is, it's really just a list of all the
 accounts that you use.  Accountants also use "account codes", which, as near
