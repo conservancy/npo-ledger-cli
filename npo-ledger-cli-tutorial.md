@@ -269,7 +269,7 @@ the account.
 When provided, the `TaxReporting` accompanies a `TaxImplication` information
 tag.  The TaxReporting refers to a document that verifies the choice for the
 `TaxImplication` tag.  For example, for individual contractors in the USA, a
-`TaxImplication` of `1099` would be well served by a `TaxImplication` that
+`TaxImplication` of `1099` would be well served by a `TaxReporting` that
 links to a [W-9](https://www.irs.gov/pub/irs-pdf/fw9.pdf) for the individual
 being paid.  For a individual foreign contractor, the `TaxReporting` might
 link to a
