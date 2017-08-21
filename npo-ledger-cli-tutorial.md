@@ -334,6 +334,9 @@ The possible values for this field are:
 * `W2`, indicating the amount paid will be part of a USA Federal income, as
   reported on Form W2 report for the `Entity` involved.
 
+* `Retirement-Pretax`, indicating the amount paid was made to a W2 employee
+  as part of pre-tax retirement plan, such as a 401(k) or 403(b) plan.
+
 * `Accountant-Advises-No-1099`, indicating that the circumstances and rules
   seem to indicate a USA Federal Form 1099 should be issued for the `Entity`
   involved, but an outside accountant advised that no 1099 need be issues for
